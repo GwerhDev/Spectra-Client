@@ -25,8 +25,8 @@ export const LogoButton = () => {
     <div className={s.container}>
       <div className={s.logoContainer}>
         <div className={s.logoButton}>
-          <div className={s.containerLogo}>
-            <img className={s.logo} src={logo} alt="Nhexa Vision" width={28} onClick={handleLogoClick} />
+          <div className={s.containerLogo} onClick={handleLogoClick}>
+            <img className={s.logo} src={logo} alt="Nhexa Vision" width={28} />
             <span className={s.typeContainer}>
               <p className={s.type}>NHEXA</p>
               <p className={s.subtitle}>vision</p>
