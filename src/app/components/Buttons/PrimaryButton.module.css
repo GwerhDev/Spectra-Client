@@ -1,0 +1,45 @@
+.primaryButton {
+  height: 50px;
+  width: 200px;
+  gap: 1rem;
+  position: relative;
+  font-family: bebas neue;
+  font-size: 20px;
+  border: none;
+  border-radius: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
+  background-color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
+  background-color: #171717;
+  color: #ffffff;
+  transition-duration: 0.2s;
+}
+
+.primaryButton:disabled {
+  background: #9b9b9b;
+  color: #747474;
+}
+
+.icon {
+  height: 14px;
+  width: 14px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .primaryButton {
+    height: 35px;
+    width: 150px;
+    font-size: 14px;
+  }
+
+  .icon {
+    height: 12px;
+    width: 12px;
+  }
+}

@@ -1,0 +1,134 @@
+.container {
+  gap: 0;
+  width: 100%;
+  max-width: 2100px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.prevButton {
+  padding: 15px;
+  margin: 0;
+  width: 50px;
+  height: 120px;
+  background: transparent;
+  transition-duration: 1s;
+  border: none;
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, transparent 100%);
+  backdrop-filter: grayscale(.7);
+}
+
+.nextButton {
+  padding: 15px;
+  margin: 0;
+  width: 50px;
+  height: 120px;
+  background: transparent;
+  transition-duration: 1s;
+  border: none;
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, transparent 100%);
+  backdrop-filter: grayscale(.7);
+}
+
+.desktop:hover .prevButton {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.635) 10%, transparent 100%);
+}
+
+.desktop:hover .nextButton {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.635) 10%, transparent 100%);
+}
+
+.desktop:hover .prevButtonImg,
+.desktop:hover .nextButtonImg {
+  opacity: 1;
+}
+
+.nextButton:hover,
+.prevButton:hover {
+  opacity: 1;
+}
+
+.prevButtonImg,
+.nextButtonImg {
+  opacity: .2;
+  transition-duration: 1s;
+}
+
+.prevButtonImg {
+  rotate: 180deg;
+}
+
+.itemList {
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  height: 120px;
+  padding-bottom: 2rem;
+  display: flex;
+  transition-duration: 1s;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.item {
+  position: sticky;
+}
+
+.desktop {
+  display: flex;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop,
+.mobile {
+  align-items: flex-start;
+  width: 100%;
+}
+
+@media only screen and (min-width: 2000px) {
+  .container {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .itemList {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+
+  .prevButton,
+  .nextButton {
+    display: none;
+  }
+
+  .itemList {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

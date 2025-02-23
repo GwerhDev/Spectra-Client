@@ -1,0 +1,19 @@
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  color: aliceblue;
+  background-color: transparent;
+  border: none;
+  opacity: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container:hover {
+  cursor: pointer;
+  color: var(--nhexa-white);
+}

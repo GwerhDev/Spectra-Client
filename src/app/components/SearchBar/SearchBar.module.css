@@ -1,0 +1,56 @@
+.liSearchBtn {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -25px;
+  z-index: 99;
+}
+
+.liSearchBtn:hover {
+  cursor: pointer;
+}
+
+.liSearchBar {
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-color: rgba(255, 255, 255, 0.452);
+  height: 25px;
+  position: relative;
+  color: var(--nhexa-white);
+  opacity: 0;
+  width: 40px;
+  transition-duration: .5s;
+}
+
+.liSearchBar:hover,
+.liSearchBar:active,
+.liSearchBar:focus {
+  border-radius: 5px;
+  width: 200px;
+  opacity: .9;
+  background-color: transparent;
+}
+
+.mediaSearch {
+  opacity: .8;
+  transition-duration: .5;
+}
+
+.mediaSearch:hover {
+  opacity: 1;
+}
+
+.barCont {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.formSearchBar {
+  display: flex;
+  justify-content: center;
+  margin-right: 15px;
+}

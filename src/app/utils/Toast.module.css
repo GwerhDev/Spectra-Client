@@ -1,0 +1,64 @@
+.container {
+  font-size: 16px;
+  position: fixed;
+  background: linear-gradient(168deg, rgba(25, 25, 25, 0.848) 20% , #171717e5 120%);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  right: 10px;
+  bottom: 2rem;
+  display: flex;
+  align-items: center;
+  color: var(--nhexa-white);
+  padding: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 50px;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.container:hover {
+  background: linear-gradient(168deg, rgb(25, 25, 25) 20% , #171717 120%);
+}
+
+.container span {
+  display: flex;
+  flex-direction: column;
+}
+
+.toastMessage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toastImg {
+  opacity: .6;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+}
+
+.closeButton {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  padding: 1rem;
+
+}
+
+.title {
+  text-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.description {
+  font-family: Product Sans, sans-serif;
+  font-weight: 100;
+  font-size: small;
+  padding-top: .3rem;
+  text-wrap: nowrap;
+  overflow-x: hidden;
+}

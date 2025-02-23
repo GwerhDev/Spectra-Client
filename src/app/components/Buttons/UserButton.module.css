@@ -1,0 +1,96 @@
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: 1s;
+  z-index: 99999;
+}
+
+.profileBtnCont {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  text-align: center;
+  justify-content: flex-end;
+  transition-duration: 1s;
+}
+
+.profileBtnMenu {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.781);
+  transition-duration: .5s;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 1s;
+}
+
+.username:hover {
+  cursor: pointer;
+}
+
+.usernameContainer {
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: 1s;
+}
+
+.btnMenuTv {
+  opacity: .8;
+  rotate: 90deg;
+}
+
+.profilePic {
+  border-radius: 100%;
+  border: solid;
+  border-width: 2px;
+}
+
+.userIcon {
+  opacity: .8;
+  filter: drop-shadow(0px 0px 4px black);
+}
+
+.openMenuButton {
+  width: 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+}
+
+.openMenuButton:hover {
+  background-color: #383838;
+}
+
+.openMenuButton:hover,
+.enterBtn:hover {
+  cursor: pointer;
+  color: var(--nhexa-white);
+}
+
+.username {
+  width: 0;
+  transition-duration: 1s;
+  overflow: hidden;
+  text-wrap: nowrap;
+}

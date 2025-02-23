@@ -1,0 +1,109 @@
+.ulCheck {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 2000px;
+  display: flex;
+  gap: 1rem;
+}
+
+.liCheck {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.divCheckCont {
+  width: 100%;
+  height: 400px;
+  min-width: 300px;
+  border-radius: 15px;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  filter: drop-shadow(0px 0px 3px black);
+  background: linear-gradient(to bottom, #ffffff, rgb(197, 197, 197));
+}
+
+.ulDescription {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+  font-family: Helvetica, sans-serif;
+  font-weight: thin;
+  list-style: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ulDescription li {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btnSubmitEnabled {
+  height: 40px;
+  width: 200px;
+  bottom: 30px;
+  position: absolute;
+  border: none;
+  border-radius: 70px;
+  background-color: #171717;
+  filter: drop-shadow(0px 0px 4px black);
+  color: aliceblue;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  transition-duration: .3s;
+}
+
+.btnSubmitFree,
+.btnSubmitDisabled {
+  height: 40px;
+  width: 200px;
+  bottom: 30px;
+  position: absolute;
+  border: none;
+  border-radius: 70px;
+  color: aliceblue;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  background-color: #bababa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnSubmitFree,
+.btnSubmitDisabled:hover {
+  cursor: not-allowed;
+}
+
+.btnSubmitEnabled:hover {
+  background-color: #292929;
+}
+
+.divPrice {
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  .ulCheck {
+    flex-direction: column;
+  }
+}

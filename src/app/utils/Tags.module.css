@@ -1,0 +1,21 @@
+.tag {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.tag p {
+  background-color: #1717179e;
+  backdrop-filter: blur(10px);
+  color: rgba(205, 205, 205, 0.79);
+  padding-left: .8rem;
+  padding-right: .8rem;
+  font-size: smaller;
+  font-family: Sans, sans-serif;
+  border-radius: 5px;
+  text-wrap: nowrap;
+}
+
+.tag p:hover {
+  background-color: #272727;
+}

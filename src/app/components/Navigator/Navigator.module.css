@@ -1,0 +1,76 @@
+.innerNavContainer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 2000px;
+}
+
+.leftSection,
+.rightSection {
+  margin: 0;
+  padding: 0;
+  width: 175px;
+  display: flex;
+  align-items: center;
+}
+
+.leftSection {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  padding-left: 50px;
+}
+
+.rightSection {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-right: 50px;
+}
+
+.appsMenuSection {
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.userMenuSection {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: 60px;
+}
+
+.middleSection {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 2000px) {
+  .leftSection {
+    padding-left: 0;
+  }
+
+  .rightSection {
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .leftSection {
+    padding-left: 25px;
+  }
+
+  .rightSection {
+    padding-right: 25px;
+  }
+}

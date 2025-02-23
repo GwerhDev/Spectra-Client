@@ -1,0 +1,79 @@
+.contMenu {
+  width: 100%;
+  margin-top: 0px;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.856);
+}
+
+.navBurgerMenu {
+  margin: 0;
+  padding: 0;
+  margin-top: 85px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.navBurgerMenu li {
+  display: flex;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.option:hover {
+  background: radial-gradient(circle, #c0c0c0, #000000);
+  text-shadow: 0 0 4px #000000;
+}
+
+.search {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formSearchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBar {
+  height: 30px;
+  width: 300px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.searchBtn {
+  padding: 12px;
+  background-color: transparent;
+  border: none;
+  outline: solid;
+  background-color: #171717;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBtn:hover {
+  outline: solid var(--nhexa-white) 1px;
+}
+
+.searchBtn:disabled {
+  background-color: #383838;
+}
+
+.searchBtn:disabled:hover {
+  cursor: not-allowed;
+}
+
+.option {
+  width: 100vw;
+  font-size: 18px;
+}

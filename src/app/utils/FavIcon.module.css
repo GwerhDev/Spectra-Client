@@ -1,0 +1,15 @@
+ .CardFav {
+   border: 0;
+   border-radius: 100px;
+   cursor: pointer;
+   transition-duration: .4s;
+ }
+
+ .CardFav:hover {
+   color: rgb(215, 0, 0);
+ }
+
+ .CardFav span {
+   display: block;
+   width: 20px;
+ }

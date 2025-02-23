@@ -1,0 +1,30 @@
+.secondaryButton {
+  height: 50px;
+  width: 200px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  border: none;
+  border-radius: 2%;
+  background-color: #84848446;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.secondaryButton:hover {
+  background-color: #171717;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 1300px) {
+  .secondaryButton {
+    height: 35px;
+    width: 150px;
+    font-size: 14px;
+  }
+
+  .icon {
+    height: 12px;
+  }
+}

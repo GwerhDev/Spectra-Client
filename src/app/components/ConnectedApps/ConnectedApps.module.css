@@ -1,0 +1,53 @@
+.appsContainer {
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  transition-duration: .4s;
+  z-index: 9999;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #171717;
+  padding: 1rem;
+  border-radius: 5px;
+  color: var(--nhexa-white);
+  align-items: center;
+}
+
+.appsContainer a {
+  width: 100%;
+}
+
+.appsContainer li {
+  transition-duration: .4s;
+  background-color: #171717;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid rgb(130, 128, 128) 1px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgb(130, 128, 128);
+}
+
+.appsContainer li {
+  scale: 0;
+}
+
+.appsContainer li:hover {
+  cursor: pointer;
+  border-color: var(--nhexa-white);
+  background: linear-gradient(to top, rgb(255, 255, 255), #171717 99%);
+  color: #171717;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.61), var(--nhexa-white), transparent);
+  background-repeat: no-repeat;
+  margin: 1rem;
+}

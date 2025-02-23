@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.menuIcon {
+  opacity: .7;
+  z-index: 99999;
+}
+
+.menuIcon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1300px) {
+  .container {
+    display: none;
+  }
+}

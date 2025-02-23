@@ -1,0 +1,190 @@
+.visorContainer {
+  overflow: hidden;
+  height: 100vh;
+  min-height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.visorVideoIntro {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.backgroundCanvas {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.background {
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  animation-timing-function: ease-in-out;
+}
+
+.visorCanvas {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #000000 97%);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.visorInfo {
+  height: 100%;
+  width: 100%;
+  max-width: 2000px;
+  min-height: 600px;
+  min-width: 400px;
+  position: relative;
+  bottom: 8rem;
+  padding-left: 50px;
+  animation-timing-function: ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.visorArtist {
+  width: fit-content;
+  margin: 0;
+}
+
+.visorArtist p {
+  color: #ffffff;
+  text-decoration: overline;
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.visorArtist p:hover {
+  opacity: 1;
+  cursor: pointer
+}
+
+.visorTitle p {
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: #000000;
+  filter: drop-shadow(1px 1px 2px #000000);
+  height: fit-content;
+  margin: 0;
+}
+
+.visorTitle {
+  height: fit-content;
+}
+
+.visorDescription {
+  width: 410px;
+  height: 100px;
+  color: #ffffffd4;
+  font-family: Product Sans, sans-serif;
+  font-size: 13.5px;
+}
+
+.visorInfo h3 {
+  font-weight: 100;
+}
+
+.visorButton {
+  scale: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+}
+
+.visorIcons {
+  width: 500px;
+  height: 25px;
+  position: relative;
+  top: 170px;
+  left: -40px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 2000px) {
+  .visorContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .visorInfo {
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .visorContainer {
+    top: 0;
+    left: 0;
+    height: 50vh;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visorVideoIntro {
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-height: 600px;
+    max-height: 50vh;
+    object-fit: cover;
+    position: absolute;
+    display: flex;
+  }
+  
+  .backgroundCanvas {
+    top: 0;
+    left: 0;
+    height: 50vh;
+    min-height: 600px;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .background {
+    top: 0;
+    left: 0;
+    height: 50vh;
+    min-height: 600px;
+    position: absolute;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .visorCanvas {
+    top: 0;
+    left: 0;
+    min-height: 600px;
+    height: 50vh;
+  }
+
+  .visorInfo {
+    width: 100%;
+  }
+
+  .visorInfo {
+    padding-left: 25px;
+  }
+}

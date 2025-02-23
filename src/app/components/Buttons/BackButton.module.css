@@ -1,0 +1,33 @@
+.container {
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  opacity: .8;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: transparent;
+}
+
+.container:hover {
+  cursor: pointer;
+  color: var(--nhexa-white);
+}
+
+.backIcon {
+  opacity: .8;
+}
+
+.container,
+.backIcon {
+  transition-duration: 1s;
+}
+
+.container:hover,
+.backIcon:hover {
+  opacity: 1;
+}

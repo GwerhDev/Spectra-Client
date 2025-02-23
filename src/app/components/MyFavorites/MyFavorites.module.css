@@ -1,0 +1,68 @@
+.favoritesContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 2000px;
+  text-shadow: 0px 0px 1px black;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.contTitle {
+  top: 75px;
+}
+
+.liLikes {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  transition-duration: .4s;
+}
+
+.divH3 {
+  color: var(--nhexa-white);
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  padding-left: 1rem;
+  opacity: 0;
+  background: linear-gradient(to right, #000000, rgba(137, 137, 137, 0) 200%);
+  width: 100%;
+}
+
+.likeImg {
+  box-shadow: 0px 0px 10px black;
+  width: 100%;
+}
+
+.itemContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.imageContainer:hover .divH3 {
+  opacity: 1;
+}
+
+.imageContainer {
+  overflow: hidden;
+  border-radius: 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  background-size: cover;
+  transition-duration: .4s;
+}
+
+.imageContainer:hover {
+  background-position: center;
+  box-shadow: 0 0 10px goldenrod;
+}

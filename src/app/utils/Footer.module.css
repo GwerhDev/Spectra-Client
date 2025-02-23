@@ -1,0 +1,58 @@
+.ruinaContFooter {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: var(--nhexa-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnsContainer {
+  width: 100%;
+  max-width: 2000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo {
+  gap: .5rem;
+  display: flex;
+}
+
+.column {
+  color: var(--nhexa-white);
+  flex-grow: 1;
+  flex-basis: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem;
+  gap: 10px;
+  font-weight: light;
+  font-size: 12px;
+}
+
+p {
+  font-weight: thin;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 2000px) {
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .column {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
