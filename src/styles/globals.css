@@ -11,6 +11,11 @@
   src: url('../assets/fonts/Game-Of-Squids.ttf');
 }
 
+@font-face {
+  font-family: Spectra;
+  src: url('../assets/fonts/Spectra.ttf');
+}
+
 .loader {
   width: 50px;
   aspect-ratio: 1;

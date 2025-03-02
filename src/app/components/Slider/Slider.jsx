@@ -2,7 +2,7 @@ import s from "./Slider.module.css";
 import { SliderTrack } from "./SliderTrack";
 
 export const Slider = (props) => {
-  const { title, data, id } = props;
+  const { title, data, id } = props || {};
 
   return (
     <section>

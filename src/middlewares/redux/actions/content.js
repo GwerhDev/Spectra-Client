@@ -1,10 +1,10 @@
 import axios from "axios";
-import { URL_API } from "../../config";
+import { URL_SPECTRA_API } from "../../config";
 import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, GET_PRODUCERS, RESET_DETAILS_MEDIA, RESET_MEDIA } from "../../misc";
 
 export async function getImage(id) {
   try {
-    const response = await axios.get(`${URL_API}/image/${id}`);
+    const response = await axios.get(`${URL_SPECTRA_API}/image/${id}`);
     return response.data.image;
   } catch (error) {
     console.error(error)
@@ -14,7 +14,7 @@ export async function getImage(id) {
 export function getMedia() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/content`);
+      const response = await axios.get(`${URL_SPECTRA_API}/content`);
       dispatch({
         type: GET_MEDIA,
         payload: response.data
@@ -28,7 +28,7 @@ export function getMedia() {
 export function getMediaById(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/content/${id}`);
+      const response = await axios.get(`${URL_SPECTRA_API}/content/${id}`);
       dispatch({
         type: GET_INFO,
         payload: response.data
@@ -54,7 +54,7 @@ export function resetDetailsMedia() {
 export function getCategories() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/category/`);
+      const response = await axios.get(`${URL_SPECTRA_API}/category/`);
       dispatch({
         type: GET_CATEGORIES,
         payload: response.data
@@ -68,7 +68,7 @@ export function getCategories() {
 export function getGenres() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/genre/`);
+      const response = await axios.get(`${URL_SPECTRA_API}/genre/`);
       dispatch({
         type: GET_GENRES,
         payload: response.data?.genres
@@ -82,7 +82,7 @@ export function getGenres() {
 export function getMediatypes() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/mediatype/`);
+      const response = await axios.get(`${URL_SPECTRA_API}/mediatype/`);
       dispatch({
         type: GET_MEDIATYPES,
         payload: response.data?.mediatypes
@@ -96,7 +96,7 @@ export function getMediatypes() {
 export function getProducers() {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/producer/`);
+      const response = await axios.get(`${URL_SPECTRA_API}/producer/`);
       dispatch({
         type: GET_PRODUCERS,
         payload: response.data?.producers
@@ -110,7 +110,7 @@ export function getProducers() {
 export function getFullDetail(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.get(`${URL_API}/content/full-detail/${id}`);
+      const response = await axios.get(`${URL_SPECTRA_API}/content/full-detail/${id}`);
       dispatch({
         type: GET_FULL_DETAIL,
         payload: response.data

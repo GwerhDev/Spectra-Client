@@ -1,5 +1,5 @@
 import axios from "axios";
-import { URL_API } from "../../config";
+import { URL_SPECTRA_API } from "../../config";
 import { AUTHENTICATING, CURRENT_USER, ERROR, IS_LOGGED } from "../../misc";
 import { options } from "../../helpers";
 import { reset } from "../../../functions/Reset";
@@ -14,7 +14,7 @@ export function isLogged(e) {
 export function auth(navigate, backRoute) {
   return async function (dispatch) {
     dispatch(isLogged(AUTHENTICATING));
-    await axios.get(`${URL_API}/auth`, options())
+    await axios.get(`${URL_SPECTRA_API}/auth`, options())
       .then(res => {
         dispatch(isLogged(true));
         dispatch({
@@ -34,7 +34,7 @@ export function auth(navigate, backRoute) {
 
 export function loginInner(email, password, navigate) {
   return async function (dispatch) {
-    await axios.post(`${URL_API}/login-inner`, { email, password })
+    await axios.post(`${URL_SPECTRA_API}/login-inner`, { email, password })
       .then(res => {
         localStorage.setItem('userToken', res.data.token);
         res.data.logged && navigate(`/auth?token=${res.data.token}`);
@@ -54,14 +54,14 @@ export function loginInner(email, password, navigate) {
 
 export function loginGoogle() {
   return async function () {
-    await axios.get(`${URL_API}/login-google`)
+    await axios.get(`${URL_SPECTRA_API}/login-google`)
       .catch((e) => { console.error(e) });
   }
 };
 
 export function signupInner(email, password, navigate) {
   return async function () {
-    await axios.post(`${URL_API}/signup-inner`, { email, password })
+    await axios.post(`${URL_SPECTRA_API}/signup-inner`, { email, password })
       .then(res => {
         return res.data.logged && navigate(`/auth?token=${res.data.token}`);
       })
@@ -75,7 +75,7 @@ export function signupInner(email, password, navigate) {
 
 export function signupGoogle(navigate) {
   return async function () {
-    await axios.get(`${URL_API}/signup-google`)
+    await axios.get(`${URL_SPECTRA_API}/signup-google`)
       .then(res => {
         return res.data.logged && navigate(`/auth?token=${res.data.token}`);
       })

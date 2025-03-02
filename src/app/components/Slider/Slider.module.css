@@ -26,6 +26,8 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  max-width: 2000px;
+
   margin-bottom: 1rem;
   position: relative;
   display: flex;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { URL_API } from "../../config";
+import { URL_SPECTRA_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMediatypes, getProducers } from "./content";
 import {
@@ -19,7 +19,7 @@ export const setEdition = (boolean) => {
 
 export const getMedia = () => {
   return async function (dispatch) {
-    const response = await axios.get(`${URL_API}/admin/content/`, options());
+    const response = await axios.get(`${URL_SPECTRA_API}/admin/content/`, options());
     dispatch({
       type: GET_MEDIA,
       payload: response.data
@@ -30,7 +30,7 @@ export const getMedia = () => {
 
 export const createMedia = (formData) => {
   return async function (dispatch) {
-    const response = await axios.post(`${URL_API}/admin/content/create`, formData, options());
+    const response = await axios.post(`${URL_SPECTRA_API}/admin/content/create`, formData, options());
     dispatch({
       type: CREATE_CONTENT,
       payload: response.data
@@ -54,7 +54,7 @@ export const updateMedia = (id, formData, visorFile, sliderFile) => {
         originalname: sliderFile.name
       };
 
-      const response = await axios.patch(`${URL_API}/admin/content/update/${id}`, formData, options());
+      const response = await axios.patch(`${URL_SPECTRA_API}/admin/content/update/${id}`, formData, options());
       dispatch({
         type: UPDATE_CONTENT,
         payload: response.data
@@ -82,7 +82,7 @@ export const updateMedia = (id, formData, visorFile, sliderFile) => {
 
 export const deleteMedia = (id) => {
   return async function (dispatch) {
-    const response = await axios.delete(`${URL_API}/admin/content/delete/${id}`, options());
+    const response = await axios.delete(`${URL_SPECTRA_API}/admin/content/delete/${id}`, options());
     dispatch(getMedia());
     return response;
   }
@@ -92,7 +92,7 @@ export function createMediatype(name) {
   return async function (dispatch) {
     const mediatype = { name }
     try {
-      const response = await axios.post(`${URL_API}/admin/mediatype/create`, mediatype, options());
+      const response = await axios.post(`${URL_SPECTRA_API}/admin/mediatype/create`, mediatype, options());
       dispatch(getMediatypes());
       return response;
     } catch (error) {
@@ -104,7 +104,7 @@ export function createMediatype(name) {
 export function deleteMediatype(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.delete(`${URL_API}/admin/mediatype/delete/${id}`, options());
+      const response = await axios.delete(`${URL_SPECTRA_API}/admin/mediatype/delete/${id}`, options());
       dispatch(getMediatypes());
       return response;
     } catch (error) {
@@ -117,7 +117,7 @@ export function createGenre(name) {
   return async function (dispatch) {
     const genre = { name }
     try {
-      const response = await axios.post(`${URL_API}/admin/genre/create`, genre, options());
+      const response = await axios.post(`${URL_SPECTRA_API}/admin/genre/create`, genre, options());
       dispatch(getGenres());
       return response;
     } catch (error) {
@@ -129,7 +129,7 @@ export function createGenre(name) {
 export function deleteGenre(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.delete(`${URL_API}/admin/genre/delete/${id}`, options());
+      const response = await axios.delete(`${URL_SPECTRA_API}/admin/genre/delete/${id}`, options());
       dispatch(getGenres());
       return response;
     } catch (error) {
@@ -142,7 +142,7 @@ export function createCategory(name) {
   return async function (dispatch) {
     const category = { name }
     try {
-      const response = await axios.post(`${URL_API}/admin/category/create`, category, options());
+      const response = await axios.post(`${URL_SPECTRA_API}/admin/category/create`, category, options());
       dispatch(getCategories());
       return response;
     } catch (error) {
@@ -154,7 +154,7 @@ export function createCategory(name) {
 export function deleteCategory(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.delete(`${URL_API}/admin/category/delete/${id}`, options());
+      const response = await axios.delete(`${URL_SPECTRA_API}/admin/category/delete/${id}`, options());
       dispatch(getCategories());
       return response;
     } catch (error) {
@@ -167,7 +167,7 @@ export function createProducer(name) {
   return async function (dispatch) {
     const producer = { name }
     try {
-      const response = await axios.post(`${URL_API}/admin/producer/create`, producer, options());
+      const response = await axios.post(`${URL_SPECTRA_API}/admin/producer/create`, producer, options());
       dispatch(getProducers());
       return response;
     } catch (error) {
@@ -179,7 +179,7 @@ export function createProducer(name) {
 export function deleteProducer(id) {
   return async function (dispatch) {
     try {
-      const response = await axios.delete(`${URL_API}/admin/producer/delete/${id}`, options());
+      const response = await axios.delete(`${URL_SPECTRA_API}/admin/producer/delete/${id}`, options());
       dispatch(getProducers());
       return response;
     } catch (error) {
@@ -191,7 +191,7 @@ export function deleteProducer(id) {
 export function getUsers() {
   return async function (dispatch) {
     try {
-      await axios.get(`${URL_API}/user/`, options())
+      await axios.get(`${URL_SPECTRA_API}/user/`, options())
         .then(res => {
           dispatch({
             type: GET_USERS,
@@ -207,7 +207,7 @@ export function getUsers() {
 export function createUser(formData) {
   return async function (dispatch) {
     try {
-      await axios.post(`${URL_API}/admin/user/create/`, formData, options())
+      await axios.post(`${URL_SPECTRA_API}/admin/user/create/`, formData, options())
         .then(res => {
           dispatch(getUsers())
           return res.data;
@@ -221,7 +221,7 @@ export function createUser(formData) {
 export function updateUser(id) {
   return async function (dispatch) {
     try {
-      await axios.patch(`${URL_API}/admin/user/update/${id}`, options())
+      await axios.patch(`${URL_SPECTRA_API}/admin/user/update/${id}`, options())
         .then(res => {
           dispatch(getUsers())
           return res.data;
@@ -235,7 +235,7 @@ export function updateUser(id) {
 export function deleteUser(id) {
   return async function (dispatch) {
     try {
-      await axios.delete(`${URL_API}/admin/user/delete/${id}`, options())
+      await axios.delete(`${URL_SPECTRA_API}/admin/user/delete/${id}`, options())
         .then(res => {
           dispatch(getUsers())
           return res.data;
