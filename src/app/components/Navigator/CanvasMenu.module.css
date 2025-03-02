@@ -3,6 +3,8 @@
   margin-top: 0px;
   list-style: none;
   background-color: rgba(0, 0, 0, 0.856);
+  font-family: Bebas Neue;
+  font-weight: 500;
 }
 
 .navBurgerMenu {
@@ -21,7 +23,6 @@
 
 .option:hover {
   background: radial-gradient(circle, #c0c0c0, #000000);
-  text-shadow: 0 0 4px #000000;
 }
 
 .search {

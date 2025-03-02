@@ -25,11 +25,11 @@ export const Navigator = () => {
     <div className='nav-container'>
       <div className={s.innerNavContainer}>
         <section className={s.leftSection}>
+          <BurgerButton />
           <LogoButton />
         </section>
         <section className={s.middleSection}>
           <NavMenu />
-          <BurgerButton />
         </section>
         <NavSearchBar />
         <section className={s.rightSection}>

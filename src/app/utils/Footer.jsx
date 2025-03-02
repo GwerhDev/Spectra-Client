@@ -11,8 +11,8 @@ export const Footer = () => {
           <p>Nhexa Entertainment</p>
           <p>La Ruina Records</p>
           <p>EL Umbral Studios</p>
-          <p>Terminal Core</p>
-          <p>Fulgor Systems</p>
+          <p>TerminalCore Labs</p>
+          <p>TerminalKiller Systems</p>
         </div>
         <div className={s.column}>
           <p>Términos de uso</p>
@@ -21,8 +21,8 @@ export const Footer = () => {
         </div>
         <div className={s.column}>
           <p>Nhexa Hub</p>
-          <p>Nhexa Pod</p>
-          <p>Nhexa Merch</p>
+          <p>Spellcast</p>
+          <p>Havenstore</p>
         </div>
         <div className={s.column}>
           <p>Soporte técnico</p>

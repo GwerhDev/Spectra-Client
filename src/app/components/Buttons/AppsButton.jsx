@@ -1,6 +1,7 @@
 import s from './AppsButton.module.css';
-import appMenuIcon from '../../../assets/images/svg/appmenu-icon.svg';
 import { $d, $gId } from '../../../functions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 export const AppsButton = () => {
   document.addEventListener('mouseup', function (e) {
@@ -38,7 +39,7 @@ export const AppsButton = () => {
 
   return (
     <button className={s.container} id="apps-button" onClick={handleClick}>
-      <img src={appMenuIcon} alt="" />
+      <FontAwesomeIcon color='var(--nhexa-white)' size='xl' icon={faLayerGroup} />
     </button>
   )
 }

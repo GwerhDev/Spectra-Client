@@ -1,5 +1,4 @@
 import s from './BackButton.module.css';
-import backIcon from '../../../assets/images/svg/back-arrow-icon.svg';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
@@ -7,6 +6,8 @@ import { toTop } from '../../../functions/toTop';
 import { resetBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { resetDetailsMedia } from '../../../middlewares/redux/actions/content';
 import { resetPlayer } from '../../../middlewares/redux/actions/player';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export const BackButton = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const BackButton = () => {
 
   return (
     <button className={s.container} onClick={handleButton}>
-      <img className={s.backIcon} src={backIcon} alt='Volver' width='25px' />
+      <FontAwesomeIcon color='var(--nhexa-white)' icon={faArrowLeft} />
     </button>
   )
 }

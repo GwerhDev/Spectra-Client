@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { reset } from '../../../functions/Reset';
-import { CanvasMenuFunction } from '../../../functions/CanvasMenuFunction';
 import navBack from '../../../functions/Navigator';
-import searchIcon from '../../../assets/images/search-icon.png';
 import { useNavigate } from 'react-router-dom';
 import { resetPlayer } from '../../../middlewares/redux/actions/player';
 import { toTop } from '../../../functions/toTop';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export const CanvasMenu = () => {
   const navigate = useNavigate();
@@ -47,7 +47,6 @@ export const CanvasMenu = () => {
   };
 
   window.onscroll = function () { navBack(setPosNav, posNav) };
-  CanvasMenuFunction();
   return (
     <div className="canvas-menu-container">
       <div className={s.contMenu}>
@@ -70,7 +69,7 @@ export const CanvasMenu = () => {
                 onChange={handleInputChange}
               />
               <button className={s.searchBtn} type="submit" disabled={buttonDisabled}>
-                <img src={searchIcon} height='20' alt="search" />
+                <FontAwesomeIcon color='var(--nhexa-white)' size='xl' icon={faMagnifyingGlass} />
               </button>
             </form>
           </li>

@@ -1,5 +1,5 @@
 import s from "./LoginNhexa.module.css";
-import laruinahubIcon from "../../../assets/images/svg/nhexavision-logo.svg";
+import laruinahubIcon from "../../../assets/images/svg/spectra-logo.svg";
 import { URL_NHEXA_LOGIN } from "../../../middlewares/config";
 
 export default function LoginNhexa() {

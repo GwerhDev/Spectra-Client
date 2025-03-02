@@ -4,8 +4,9 @@ import { resetOption } from "../../../middlewares/redux/actions";
 import { searchBarFunction } from '../../../functions/SearchBar';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import searchIcon from '../../../assets/images/search-icon.png';
 import { reset } from '../../../functions/Reset';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export function SearchBar() {
   const navigate = useNavigate();
@@ -39,13 +40,13 @@ export function SearchBar() {
           onChange={handleInputChange}
           onMouseEnter={() => searchBarFunction('enter')}
         />
-        <button 
+        <button
           className={s.liSearchBtn}
           type="submit"
           disabled={false}
           onMouseEnter={() => searchBarFunction('enter')}
         >
-          <img className={s.mediaSearch} src={searchIcon} height='20' alt="search" />
+          <FontAwesomeIcon color='var(--nhexa-white)' size='lg' icon={faMagnifyingGlass} />
         </button>
       </form>
     </div>

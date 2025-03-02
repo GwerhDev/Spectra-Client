@@ -1,7 +1,7 @@
 import s from './Colaborate.module.css';
 import { Link } from 'react-router-dom';
 import { BodyCss } from '../../../functions';
-import laruinaLogo from '../../../assets/images/ruina-records-logo.png'
+import logo from '../../../assets/images/svg/spectra-logo.svg'
 
 export const Colaborate = () => {
   BodyCss()
@@ -11,7 +11,7 @@ export const Colaborate = () => {
       <div className='section-container'>
         <div className='header-container'>
           <h1>DONAR A ESTE PROYECTO</h1>
-          <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} />
+          <img src={logo} alt='laruina.cl' width='300px' className={s.logo} />
           <ul className={s.ulContBtn}>
             <li className={s.buttonDonate}>
               <Link to='/checkout/donation'>

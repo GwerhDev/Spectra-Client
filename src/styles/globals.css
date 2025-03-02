@@ -54,6 +54,10 @@ input {
   font-family: Poppins;
 }
 
+input:focus {
+  outline: none;
+}
+
 .mt-110 {
   margin-top: 110px;
 }
@@ -103,6 +107,7 @@ button:disabled {
   font-size: 20px;
   padding-left: 1rem;
   font-family: Bebas Neue;
+  font-weight: 500;
 }
 
 .canvas-menu-container {

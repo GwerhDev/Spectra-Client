@@ -16,7 +16,7 @@ export const EnterButton = () => {
 
   return (
     <button className={s.container} onClick={onClickValue}>
-      <FontAwesomeIcon className={s.icon} icon={faUser} />
+      <FontAwesomeIcon  color='var(--nhexa-white)' icon={faUser} />
     </button>
   )
 };

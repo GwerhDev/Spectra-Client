@@ -1,23 +1,22 @@
 import s from './ConnectedApps.module.css';
 import { useSelector } from 'react-redux';
 import { getUserToken } from '../../../middlewares/helpers';
-import appsIcon from '../../../assets/images/svg/appstab-icon.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 
 export const ConnectedApps = (props) => {
-  const { width } = props;
+  const { width } = props || {};
   const currentUser = useSelector((state) => state.currentUser);
-  const urlMerch = 'https://merch.laruina.cl/';
-  const urlPlay = currentUser ? 'https://play.laruina.cl/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
-  const urlHub = currentUser ? 'https://hub.laruina.cl/auth/' + getUserToken() : 'https://hub.laruina.cl/';
+  const urlMerch = 'https://merch.nhexa.cl/';
+  const urlSpellcast = currentUser ? 'https://spell.nhexa.cl/auth/' + getUserToken() : 'https://spell.nhexa.cl/';
 
   return (
     <ul className={s.appsContainer} id='apps-container' style={{ width: width || "100%" }}>
-      <img src={appsIcon} alt="" height={"50px"}/>
+      <FontAwesomeIcon color='var(--nhexa-white)' icon={faLayerGroup} />
       <span>Apps</span>
       <div className={s.divider} />
-      <a href={urlHub}><li id='app-option-1'>Hub</li></a>
-      <a href={urlPlay}><li id='app-option-2'>Play</li></a>
-      <a href={urlMerch}><li id='app-option-3'>Merch</li></a>
+      <a href={urlSpellcast}><li id='app-option-1'>Spellcast</li></a>
+      <a href={urlMerch}><li id='app-option-3'>Havenstore</li></a>
     </ul>
   )
 }
