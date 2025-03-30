@@ -8,8 +8,8 @@ import adminIcon from '../../../assets/images/svg/admin-icon.svg';
 import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
 import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
 import { OptionProfile } from '../../../functions';
-import { logout } from '../../../functions/Logout';
 import { resetOption } from '../../../middlewares/redux/actions';
+import { logout } from '../../../middlewares/redux/actions/account';
 import { toTop } from '../../../functions/toTop';
 
 export const RequestProfile = () => {

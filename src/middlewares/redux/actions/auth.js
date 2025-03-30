@@ -1,7 +1,6 @@
 import axios from "axios";
 import { URL_SPECTRA_API } from "../../config";
 import { AUTHENTICATING, CURRENT_USER, ERROR, IS_LOGGED } from "../../misc";
-import { options } from "../../helpers";
 import { reset } from "../../../functions/Reset";
 
 export function isLogged(e) {
@@ -9,12 +8,12 @@ export function isLogged(e) {
     type: IS_LOGGED,
     payload: e,
   }
-}
+};
 
 export function auth(navigate, backRoute) {
   return async function (dispatch) {
     dispatch(isLogged(AUTHENTICATING));
-    await axios.get(`${URL_SPECTRA_API}/auth`, options())
+    await axios.get(`${URL_SPECTRA_API}/auth`, { withCredentials: true })
       .then(res => {
         dispatch(isLogged(true));
         dispatch({

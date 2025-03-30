@@ -45,6 +45,7 @@
 
 .usernameContainer {
   width: 100%;
+  font-size: 12px;
   gap: 5px;
   display: flex;
   align-items: center;
