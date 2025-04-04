@@ -1,22 +1,16 @@
 import s from './EnterButton.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { setOption } from '../../../middlewares/redux/actions';
+import { URL_CLIENT, URL_NHEXA_ACCOUNTS } from '../../../middlewares/config';
 
 export const EnterButton = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  function onClickValue() {
-    dispatch(setOption('login'));
-    navigate('/login');
+  const onClickValue = () => {
+    window.location.href = URL_NHEXA_ACCOUNTS + "/login?callback=" + URL_CLIENT; 
   };
 
   return (
     <button className={s.container} onClick={onClickValue}>
-      <FontAwesomeIcon  color='var(--nhexa-white)' icon={faUser} />
+      <FontAwesomeIcon color='var(--nhexa-white)' icon={faUser} />
     </button>
   )
 };

@@ -51,15 +51,14 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  text-transform: uppercase;
 }
 
 .type {
   margin: 0;
   padding: 0;
   font-family: Spectra; 
-  font-size: 15px;
-  color: var(--nhexa-white);
+  font-size: 25px;
+  color: var(--spectra-logo);
 }
 
 .subtitle {

@@ -30,7 +30,9 @@ export const Footer = () => {
       </div>
       <span className={s.logo}>
         <h3>© {new Date().getFullYear()}</h3>
-        <LogoButton />
+        <span>
+          <LogoButton />
+        </span>
       </span>
     </div>
   )

@@ -25,7 +25,7 @@ export const BurgerButton = () => {
   return (
     <span className={s.container}>
       {
-        isOpen && <FontAwesomeIcon icon={faXmark} color='var(--nhexa-color)' size='lg' onClick={closeMenu} />
+        isOpen && <FontAwesomeIcon icon={faXmark} color='var(--nhexa-white)' size='lg' onClick={closeMenu} />
       }
       {
         !isOpen && <FontAwesomeIcon icon={faBars} color='var(--nhexa-white)' size='lg' onClick={openMenu} />
