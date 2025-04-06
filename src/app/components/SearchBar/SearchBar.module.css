@@ -33,7 +33,7 @@
   width: 200px;
   opacity: .9;
   background-color: transparent;
-  border-color: var(--nhexa-color);
+  border-color: var(--spectra-color);
 }
 
 .mediaSearch {

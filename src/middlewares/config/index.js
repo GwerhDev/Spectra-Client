@@ -7,3 +7,4 @@ export const URL_NHEXA_API = environment === DEVELOPMENT ? "http://localhost:808
 export const URL_SPECTRA_API = environment === DEVELOPMENT ? "http://localhost:8081":"https://spectra-nhexa-api.fly.dev";
 
 export const URL_NHEXA_ACCOUNTS = environment === DEVELOPMENT ? "http://localhost:5173" : "https://accounts.nhexa.cl";
+export const URL_NHEXA = environment === DEVELOPMENT ? "http://localhost:5175" : "https://nhexa.cl"

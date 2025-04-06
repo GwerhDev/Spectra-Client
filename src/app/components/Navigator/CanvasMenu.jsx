@@ -10,6 +10,7 @@ import { resetPlayer } from '../../../middlewares/redux/actions/player';
 import { toTop } from '../../../functions/toTop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { URL_NHEXA } from '../../../middlewares/config';
 
 export const CanvasMenu = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export const CanvasMenu = () => {
   };
 
   window.onscroll = function () { navBack(setPosNav, posNav) };
-  
+
   return (
     <div className="canvas-menu-container">
       <div className={s.contMenu}>
@@ -60,6 +61,9 @@ export const CanvasMenu = () => {
           </li>
           <li onClick={handleClick}>
             <Link className={s.option} to='/donate'>Colaborar</Link>
+          </li>
+          <li onClick={handleClick}>
+            <a className={s.option} href={URL_NHEXA}>NHEXA</a>
           </li>
           <li className={s.search}>
             <form className={s.formSearchBar} onSubmit={handleSubmit}>
