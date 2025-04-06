@@ -1,7 +1,6 @@
 .appsContainer {
   margin: 0;
   padding: 0;
-  display: none;
   flex-direction: column;
   gap: 5px;
   transition-duration: .4s;
@@ -9,13 +8,14 @@
   position: absolute;
   right: 0;
   top: 40px;
-  background-color: #171717;
+  background-color: var(--spectra-black);
   padding: 1rem;
   border-radius: 5px;
   color: var(--nhexa-white);
   align-items: center;
   font-family: Bebas Neue;
   font-weight: 400;
+  display: none;
 }
 
 .appsContainer a {
@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #171717;
+  background-color: var(--spectra-black);
   border: solid rgb(130, 128, 128) 1px;
   box-shadow: 0px 0px 4px rgb(130, 128, 128);
 }
@@ -53,8 +53,7 @@
 .appsContainer li:hover {
   cursor: pointer;
   border-color: var(--nhexa-white);
-  background: #ffffff;
-  color: #171717;
+  background: linear-gradient(to top, var(--spectra-color), var(--spectra-black) 99%);
 }
 
 .divider {

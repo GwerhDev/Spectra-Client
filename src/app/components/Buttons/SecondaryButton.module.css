@@ -12,7 +12,7 @@
 }
 
 .secondaryButton:hover {
-  background-color: #171717;
+  background-color: var(--spectra-black);
   transition-duration: 0.5s;
 }
 

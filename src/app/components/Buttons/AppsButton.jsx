@@ -27,7 +27,7 @@ export const AppsButton = () => {
     var container1 = $gId('app-option-1');
     var container2 = $gId('app-option-2');
     var container3 = $gId('app-option-3');
-    $d("#logo-button").style.backgroundColor = "#171717";
+    $d("#logo-button").style.backgroundColor = "var(--spectra-black)";
     $d("#apps-container").style.display = "flex";
     container1.style.transform = 'translateX(0)'
     container2.style.transform = 'translateX(0)'

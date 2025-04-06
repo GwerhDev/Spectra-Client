@@ -1,10 +1,9 @@
 .container {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: none;
   z-index: 99;
   transition: 1s;
+  border: none;
+  align-items: center;
+  background-color: transparent;
 }
 
 .container:hover {

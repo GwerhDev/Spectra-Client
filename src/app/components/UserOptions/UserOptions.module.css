@@ -17,8 +17,7 @@
 .optionProfileBtn:hover {
   cursor: pointer;
   border-color: var(--nhexa-white);
-  background: linear-gradient(to top, rgb(255, 255, 255), #171717 99%);
-  color: #171717;
+  background: linear-gradient(to top, var(--spectra-color), var(--spectra-black) 99%);
 }
 
 .optionProfileBtn:hover .imgIcon {
@@ -33,13 +32,13 @@
 
 .imgIcon {
   filter: grayscale(1);
-  height: 30px;
+  height: 18px;
 }
 
 .optionProfileBtn {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to top, #171717, #171717 99%);
+  background: linear-gradient(to top, var(--spectra-black), var(--spectra-black) 99%);
   box-shadow: 0px 0px 4px rgb(130, 128, 128);
   border: solid;
   border-color: #8b8b8b;

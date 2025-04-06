@@ -18,7 +18,7 @@
 }
 
 .container:hover {
-  background: linear-gradient(168deg, rgb(25, 25, 25) 20% , #171717 120%);
+  background: linear-gradient(168deg, rgb(25, 25, 25) 20% , var(--spectra-black) 120%);
 }
 
 .container span {

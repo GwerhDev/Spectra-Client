@@ -22,7 +22,7 @@
 }
 
 .option:hover {
-  background: radial-gradient(circle, #c0c0c0, #000000);
+  background: radial-gradient(circle, var(--spectra-color), #000000);
 }
 
 .search {
@@ -51,7 +51,7 @@
   background-color: transparent;
   border: none;
   outline: solid;
-  background-color: #171717;
+  background-color: var(--spectra-black);
   padding-left: 50px;
   padding-right: 50px;
   border-top-right-radius: 5px;
@@ -75,6 +75,7 @@
 }
 
 .option {
-  width: 100vw;
+  width: 100%;
+  padding: .5rem;
   font-size: 18px;
 }

@@ -49,13 +49,13 @@
 }
 
 .primaryButton:hover {
-  background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
-  background-color: #171717;
+  background: linear-gradient(to bottom, var(--spectra-black), rgba(0, 0, 0, 0.679));
+  background-color: var(--spectra-black);
   color: #ffffff;
   transition-duration: 0.2s;
 }
 
 .secundaryButton:hover{
-  background-color: #171717;
+  background-color: var(--spectra-black);
   transition-duration: 0.5s;
 }

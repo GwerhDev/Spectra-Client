@@ -38,7 +38,7 @@
 
 .createTitle {
   color: var(--nhexa-white);
-  background-color: #171717;
+  background-color: var(--spectra-black);
   padding-left: 1rem;
   padding-right: 1rem;
   border-radius: 5px;
@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-color: #171717;
+  border-color: var(--spectra-black);
   border-width: 1px;
   border-radius: 15px;
   gap: .5rem;
@@ -75,7 +75,7 @@
   font-size: 12px;
   margin-top: -3px;
   margin-left: -.25rem;
-  background-color: #171717;
+  background-color: var(--spectra-black);
   border-radius: 3px;
   color: var(--nhexa-white);
   padding-left: .5rem;
@@ -107,7 +107,7 @@
   flex-direction: column;
   width: 50%;
   justify-content: space-around;
-  border-color: #171717;
+  border-color: var(--spectra-black);
   border-width: 1px;
   text-align: center;
 }

@@ -1,11 +1,11 @@
 .innerNavContainer {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 2000px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 2000px;
 }
 
 .leftSection,

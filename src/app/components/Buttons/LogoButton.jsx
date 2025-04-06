@@ -11,6 +11,7 @@ export const LogoButton = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [posNav, setPosNav] = useState();
+  
   window.onscroll = function () { navBack(setPosNav, posNav) };
 
   const handleLogoClick = () => {

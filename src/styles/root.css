@@ -8,10 +8,11 @@ ul, li{
   
   --nhexa-white: #e5e5e5;
   --nhexa-color: #5086b0;
-  --spectra-logo: #c70049;
+  --spectra-black: #171717;
+  --spectra-color: #c70049;
 
   background-color: #000000;
-  background: linear-gradient(168deg, #000000 20% , #171717 120%);
+  background: linear-gradient(168deg, #000000 20% , var(--spectra-black) 120%);
   --primary-white: #f0f0f0;
   overflow-x: hidden;
 }
@@ -33,7 +34,7 @@ body, .App {
   min-height: 100vh;
   overflow-x: hidden;
   list-style: none;
-  background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
+  background: linear-gradient(168deg, rgb(0, 0, 0) 20% , var(--spectra-black) 120%);
 }
 
 code {
@@ -54,7 +55,7 @@ code {
   z-index: 999999999999999;  
 }
 ::-webkit-scrollbar-track {
-  background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
+  background: linear-gradient(168deg, rgb(0, 0, 0) 20% , var(--spectra-black) 120%);
 }
 ::-webkit-scrollbar-thumb {
   background: #fff2;

@@ -10,7 +10,7 @@ const container6 = $gId('optionProfileBtn6');
 const containerUl = $d('.liProfileMenuDisplay');
 
 export function userButtonEnter() {
-    $d(`#profile-button`).style.backgroundColor = '#171717';
+    $d(`#profile-button`).style.backgroundColor = 'var(--spectra-black)';
     $d(`#profile-button`).style.width = '100%';
     $d(`#username`).style.width = '100px';
 }
@@ -51,7 +51,7 @@ export function userButtonLeave() {
 }
 
 export function userButtonClick() {
-    $d(`#profile-button`).style.backgroundColor = '#171717';
+    $d(`#profile-button`).style.backgroundColor = 'var(--spectra-black)';
     $d(`#optionProfileBtn0`).style.transform = 'translateX(0)';
     $d(`#optionProfileBtn1`).style.transform = 'translateX(0)';
     $d(`#optionProfileBtn2`).style.transform = 'translateX(0)';

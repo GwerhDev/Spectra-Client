@@ -59,9 +59,10 @@
 }
 
 .profilePic {
+  width: 30px;
   border-radius: 100%;
-  border: solid;
-  border-width: 2px;
+  border: solid var(--spectra-color);
+  border-width: 3px;
 }
 
 .userIcon {

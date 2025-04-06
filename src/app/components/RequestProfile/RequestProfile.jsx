@@ -2,15 +2,12 @@ import s from './RequestProfile.module.css';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import userIcon from '../../../assets/images/svg/profile-icon.svg';
-import likeIcon from '../../../assets/images/svg/like-icon.svg';
-import adminIcon from '../../../assets/images/svg/admin-icon.svg';
-import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
-import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
 import { OptionProfile } from '../../../functions';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { logout } from '../../../middlewares/redux/actions/account';
 import { toTop } from '../../../functions/toTop';
+import { faCreditCard, faHeart, faRightFromBracket, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const RequestProfile = () => {
   const dispatch = useDispatch();
@@ -42,45 +39,52 @@ export const RequestProfile = () => {
                   onClick={() => handleOption('/u/profile')}
                 />
                 :
-                <img
-                  src={userIcon}
-                  className={s.userIcon} id='profileIcon' alt="perfil"
+                <FontAwesomeIcon
+                  icon={faUser}
                   onClick={() => handleOption('/u/profile')}
+                  className={s.icon}
+                  id='profileIcon'
+                  alt="perfil"
+                  size="xl"
                 />
             }
           </li>
           <li>
-            <img
-              src={likeIcon}
-              className={s.likeIcon}
+            <FontAwesomeIcon
+              icon={faHeart}
+              className={s.icon}
               id='favoritesIcon' alt="favoritos"
               onClick={() => handleOption('/favorites')}
+              size="xl"
             />
           </li>
           <li>
-            <img
-              src={subscriptionIcon}
-              className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
+            <FontAwesomeIcon
+              icon={faCreditCard}
+              className={s.icon} id='subscriptionIcon' alt="lista"
               onClick={() => handleOption('/subscription')}
+              size="xl"
             />
           </li>
           {
-            role === 'admin'
-              ? <li>
-                <img
-                  src={adminIcon}
-                  className={s.adminIcon} id='dashboardIcon' alt="lista"
-                  onClick={() => handleOption('/dashboard')}
-                />
-              </li>
-              : null
+            role === 'admin' &&
+            <li>
+              <FontAwesomeIcon
+                icon={faUserShield}
+                className={s.icon} id='dashboardIcon' alt="lista"
+                onClick={() => handleOption('/dashboard')}
+                size="xl"
+              />
+            </li>
           }
           <li>
-            <img
-              src={logoutIcon}
-              className={s.logoutIcon}
+            <FontAwesomeIcon
+              icon={faRightFromBracket}
+              className={s.icon}
               alt="salir"
-              onClick={() => logout(navigate)} />
+              onClick={() => logout(navigate)}
+              size="xl"
+            />
           </li>
         </ul>
       </div>

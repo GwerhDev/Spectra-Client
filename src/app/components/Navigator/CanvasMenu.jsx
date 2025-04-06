@@ -47,6 +47,7 @@ export const CanvasMenu = () => {
   };
 
   window.onscroll = function () { navBack(setPosNav, posNav) };
+  
   return (
     <div className="canvas-menu-container">
       <div className={s.contMenu}>

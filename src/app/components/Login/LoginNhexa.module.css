@@ -14,7 +14,7 @@
   padding: 0;
   border: none;
   border-radius: 5px;
-  background: linear-gradient(172deg, #171717, var(--nhexa-color));
+  background: linear-gradient(172deg, var(--spectra-black), var(--nhexa-color));
   width: 260px;
   height: 40px;
   font-size: 13px;
@@ -29,7 +29,7 @@
 }
 
 .button:hover {
-  background: linear-gradient(172deg, #171717, var(--nhexa-color));
+  background: linear-gradient(172deg, var(--spectra-black), var(--nhexa-color));
   scale: 1.02;
 }
 

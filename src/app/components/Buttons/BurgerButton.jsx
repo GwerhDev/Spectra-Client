@@ -7,7 +7,6 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export const BurgerButton = () => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen)
 
   const openMenu = () => {
     $d('.canvas-menu-container').style.display = 'flex';
