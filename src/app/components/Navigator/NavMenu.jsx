@@ -30,9 +30,6 @@ export const NavMenu = () => {
       <li onClick={handleClick}>
         <Link to='/donate'>Colaborar</Link>
       </li>
-      <li onClick={handleClick}>
-        <a href={URL_NHEXA}>NHEXA</a>
-      </li>
     </ul>
   )
 }

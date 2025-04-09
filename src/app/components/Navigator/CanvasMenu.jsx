@@ -62,9 +62,6 @@ export const CanvasMenu = () => {
           <li onClick={handleClick}>
             <Link className={s.option} to='/donate'>Colaborar</Link>
           </li>
-          <li onClick={handleClick}>
-            <a className={s.option} href={URL_NHEXA}>NHEXA</a>
-          </li>
           <li className={s.search}>
             <form className={s.formSearchBar} onSubmit={handleSubmit}>
               <input
