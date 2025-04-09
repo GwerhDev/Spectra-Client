@@ -13,6 +13,7 @@ export const UserMenu = () => {
   const option = useSelector(state => state.option);
   const isLogged = useSelector(state => state.isLogged);
   const currentUser = useSelector(state => state.currentUser);
+  
   window.onscroll = function () { navBack(setPosNav, posNav) };
 
   return (
@@ -25,9 +26,7 @@ export const UserMenu = () => {
           </div>
           :
           !currentUser
-            ? option === 'login'
-              ? <span className={s.buttonContainer}><BackButton /></span>
-              : <span className={s.buttonContainer}><EnterButton /></span>
+            ?  <span className={s.buttonContainer}><EnterButton /></span>
             : option === '' || option === 'login'
               ? <span className={s.buttonContainer}><UserButton /></span>
               : <span className={s.buttonContainer}><BackButton /></span>

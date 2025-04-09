@@ -1,15 +1,12 @@
 import s from './ConnectedApps.module.css';
-import { useSelector } from 'react-redux';
-import { getUserToken } from '../../../middlewares/helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faLayerGroup, faMusic, faStore } from '@fortawesome/free-solid-svg-icons';
 
 export const ConnectedApps = (props) => {
   const { width } = props || {};
-  const currentUser = useSelector((state) => state.currentUser);
-  const urlNhexaHub = 'https://download.nhexa.cl/?product=nhexahub-desktop';
-  const urlMerch = currentUser ? 'https://havenstore.nhexa.cl/auth/' + getUserToken() : 'https://havenstore.nhexa.cl/';
-  const urlSpellcast = currentUser ? 'https://spellcast.nhexa.cl/auth/' + getUserToken() : 'https://spellcast.nhexa.cl/';
+  const urlNhexaHub = 'https://nhexa.cl/';
+  const urlMerch = 'https://havenstore.nhexa.cl/';
+  const urlSpellcast = 'https://spellcast.nhexa.cl/';
 
   return (
     <ul className={s.appsContainer} id='apps-container' style={{ width: width || "100%" }}>
