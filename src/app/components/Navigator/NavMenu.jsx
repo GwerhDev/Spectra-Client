@@ -5,7 +5,6 @@ import { resetOption } from '../../../middlewares/redux/actions';
 import { reset } from '../../../functions/Reset';
 import navBack from '../../../functions/Navigator';
 import { toTop } from '../../../functions/toTop';
-import { URL_NHEXA } from '../../../middlewares/config';
 
 export const NavMenu = () => {
   const dispatch = useDispatch();

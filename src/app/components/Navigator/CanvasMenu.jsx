@@ -10,7 +10,6 @@ import { resetPlayer } from '../../../middlewares/redux/actions/player';
 import { toTop } from '../../../functions/toTop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { URL_NHEXA } from '../../../middlewares/config';
 
 export const CanvasMenu = () => {
   const navigate = useNavigate();
