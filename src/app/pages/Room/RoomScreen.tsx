@@ -40,7 +40,7 @@ export function RoomScreen() {
   );
 }
 
-function RoomTopBar({ room, onExit, chatOpen, setChatOpen }: {
+function RoomTopBar({ room, onExit }: {
   room: typeof ACTIVE_ROOMS[0];
   onExit: () => void;
   chatOpen: boolean;
