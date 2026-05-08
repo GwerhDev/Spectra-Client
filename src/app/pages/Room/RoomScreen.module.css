@@ -113,7 +113,7 @@
   align-items: center;
   gap: 4px;
   padding: 3px 6px;
-  background: oklch(0.10 0 0 / 0.7);
+  background: color-mix(in srgb, var(--bg-inset) 70%, transparent);
   backdrop-filter: blur(6px);
   border-radius: 4px;
 }
@@ -121,7 +121,7 @@
 .listeningBadge {
   padding: 8px;
   border-radius: 8px;
-  background: oklch(0.12 0 0 / 0.5);
+  background: color-mix(in srgb, var(--bg) 50%, transparent);
   backdrop-filter: blur(8px);
   border: 1px dashed var(--line-soft);
   text-align: center;
@@ -137,7 +137,7 @@
   position: absolute;
   top: 16px; left: 16px;
   padding: 8px 12px;
-  background: oklch(0.12 0 0 / 0.6);
+  background: color-mix(in srgb, var(--bg) 60%, transparent);
   backdrop-filter: blur(10px);
   border: 1px solid var(--line-soft);
   border-radius: 4px;

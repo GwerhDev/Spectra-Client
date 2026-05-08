@@ -7,10 +7,10 @@
 
 :root {
   /* Backgrounds */
-  --bg:        oklch(0.13 0.010 255);
-  --bg-elev:   oklch(0.16 0.012 255);
-  --bg-elev-2: oklch(0.20 0.014 255);
-  --bg-inset:  oklch(0.10 0.008 255);
+  --bg:        #1a1a1c;
+  --bg-elev:   #202024;
+  --bg-elev-2: #27272c;
+  --bg-inset:  #131315;
 
   /* Borders */
   --line:      oklch(0.26 0.008 0);

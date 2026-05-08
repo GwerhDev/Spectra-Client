@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Loader } from '@/app/components/ui/Loader/Loader';
 import { EditorialShell } from '@/app/layouts/EditorialShell/EditorialShell';
 import { EditorialHome } from '@/app/pages/Home/EditorialHome';
 import { RoomScreen } from '@/app/pages/Room/RoomScreen';
@@ -8,35 +10,12 @@ import { useInitSession } from '@/hooks/useInitSession';
 import { useAppSelector } from '@/store/hooks';
 
 function AppRoutes() {
-  useInitSession();
+  const [progress, setProgress] = useState(0);
+  useInitSession(setProgress);
   const loader = useAppSelector(s => s.session.userData.loader);
 
   if (loader) {
-    return (
-      <div style={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 16,
-        background: 'var(--bg)',
-        animation: 'pulse 1.5s ease-in-out infinite',
-      }}>
-        <img
-          src="/logo.png"
-          alt="Spectra"
-          style={{
-            width: 36, height: 36,
-            filter: 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)',
-          }}
-        />
-        <span className="mono" style={{ fontSize: 11, color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-          SPECTRA
-        </span>
-        <style>{`@keyframes pulse { 0%,100% { opacity: 0.3 } 50% { opacity: 1 } }`}</style>
-      </div>
-    );
+    return <Loader progress={progress}/>;
   }
 
   return (
