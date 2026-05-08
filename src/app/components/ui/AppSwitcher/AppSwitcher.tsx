@@ -42,23 +42,16 @@ export function AppSwitcher() {
           {apps.length === 0 && (
             <span className={styles.empty}>Loading…</span>
           )}
-          {apps.map(app => {
-            const current = isCurrent(app.url);
-            return (
-              <button
-                key={app.url}
-                className={`${styles.item} ${current ? styles.itemActive : ''}`}
-                onClick={() => {
-                  if (current) { setOpen(false); return; }
-                  window.location.href = app.url;
-                }}
-              >
-                <img src={app.icon} alt="" className={styles.appIcon} />
-                <span className={styles.label}>{app.label.toUpperCase()}</span>
-                {current && <span className={styles.activeMark}>●</span>}
-              </button>
-            );
-          })}
+          {apps.filter(app => !isCurrent(app.url)).map(app => (
+            <button
+              key={app.url}
+              className={styles.item}
+              onClick={() => { window.location.href = app.url; }}
+            >
+              <img src={app.icon} alt="" className={styles.appIcon} />
+              <span className={styles.label}>{app.label.toUpperCase()}</span>
+            </button>
+          ))}
         </div>
       )}
     </div>
