@@ -1,0 +1,343 @@
+.layout {
+  display: grid;
+  height: 100%;
+  background: oklch(0.11 0.005 60);
+  transition: grid-template-columns 200ms;
+  overflow: hidden;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line-soft);
+  background: var(--bg-inset);
+  flex-shrink: 0;
+}
+
+.roomInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.roomInfoTitle {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.roomInfoSub {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+/* ── Stage ── */
+.stageWrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, oklch(0.22 0.04 190) 0%, oklch(0.10 0.01 190) 70%),
+    repeating-linear-gradient(135deg, oklch(0.16 0.01 190) 0 2px, oklch(0.12 0.005 190) 2px 14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stagePlaceholder {
+  text-align: center;
+  color: oklch(0.85 0.02 190);
+  font-family: var(--font-mono);
+  position: relative;
+  z-index: 1;
+}
+
+.stageScanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, oklch(0 0 0 / 0.1) 2px 3px);
+}
+
+/* ── Participant rail ── */
+.participantRail {
+  position: absolute;
+  top: 16px; right: 16px; bottom: 16px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.participantTile {
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  background: oklch(0.14 0.01 60);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 150ms;
+  pointer-events: auto;
+}
+
+.camFeed {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+}
+
+.nameTag {
+  position: absolute;
+  bottom: 4px; left: 4px; right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  background: oklch(0.10 0 0 / 0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+}
+
+.listeningBadge {
+  padding: 8px;
+  border-radius: 8px;
+  background: oklch(0.12 0 0 / 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px dashed var(--line-soft);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--fg-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Sync indicator ── */
+.syncIndicator {
+  position: absolute;
+  top: 16px; left: 16px;
+  padding: 8px 12px;
+  background: oklch(0.12 0 0 / 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Playback bar ── */
+.playbackBar {
+  padding: 16px 20px 8px;
+  background: var(--bg-inset);
+  border-top: 1px solid var(--line-soft);
+  flex-shrink: 0;
+}
+
+.progressTrack {
+  position: relative;
+  height: 6px;
+  background: var(--bg-elev-2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.progressFill {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.progressThumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; height: 12px;
+  border-radius: 6px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px oklch(0.72 0.17 230 / 0.25);
+}
+
+.participantCursor {
+  position: absolute;
+  top: -2px;
+  width: 2px;
+  height: 10px;
+  opacity: 0.7;
+}
+
+.hoverLabel {
+  position: absolute;
+  top: -28px;
+  transform: translateX(-50%);
+  padding: 3px 6px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  pointer-events: none;
+}
+
+.timeRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* ── Control bar ── */
+.controlBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px 14px;
+  background: var(--bg-inset);
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: var(--line-soft);
+  margin: 0 4px;
+}
+
+.centerControls {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* ── Chat ── */
+.chat {
+  border-left: 1px solid var(--line-soft);
+  background: var(--bg-inset);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatTabs {
+  display: flex;
+  padding: 12px 14px 0;
+  border-bottom: 1px solid var(--line-soft);
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.chatTab {
+  padding-bottom: 10px;
+  font-size: 12px;
+  color: var(--fg-mute);
+  border-bottom: 1.5px solid transparent;
+  margin-bottom: -1px;
+  transition: color 120ms, border-color 120ms;
+}
+
+.chatTabActive {
+  color: var(--fg);
+  border-bottom-color: var(--accent);
+  font-weight: 500;
+}
+
+.chatClose {
+  color: var(--fg-mute);
+  padding-bottom: 10px;
+  transition: color 120ms;
+}
+.chatClose:hover { color: var(--fg); }
+
+.chatMessages {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chatEvent {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatEventLine {
+  flex: 1;
+  height: 1px;
+  background: var(--line-soft);
+}
+
+.chatMsg {
+  display: flex;
+  gap: 10px;
+}
+
+.chatInput {
+  padding: 10px 14px;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.inputWrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--bg-elev);
+  border: 1px solid var(--line-soft);
+  border-radius: 4px;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--fg);
+  font-size: 13px;
+}
+
+.sendBtn {
+  width: 34px;
+  height: 34px;
+  background: var(--accent);
+  color: oklch(0.15 0 0);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 150ms;
+}
+.sendBtn:hover { opacity: 0.85; }

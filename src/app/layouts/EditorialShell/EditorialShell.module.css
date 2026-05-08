@@ -1,0 +1,107 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  overflow: hidden;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 18px 32px;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10;
+  margin-right: 40px;
+}
+
+.wordmarkText {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.navItems {
+  display: flex;
+  gap: 4px;
+}
+
+.navItem {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  position: relative;
+  transition: color 120ms;
+}
+
+.navItem:hover {
+  color: var(--fg-dim);
+}
+
+.navItemActive {
+  color: var(--fg) !important;
+}
+
+.activeDot {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  padding: 8px;
+  color: var(--fg-mute);
+  transition: color 120ms;
+}
+
+.iconBtn:hover {
+  color: var(--fg-dim);
+}
+
+.liveBtn {
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg-mute);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.avatarBtn {
+  padding: 4px;
+  margin-left: 4px;
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  position: relative;
+}

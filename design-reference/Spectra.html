@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Spectra — app de salas sociales + streaming compartido</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { overflow: hidden; }
+  #root { width: 100vw; height: 100vh; overflow: hidden; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="ui-primitives.jsx"></script>
+<script type="text/babel" src="data.jsx"></script>
+<script type="text/babel" src="app-shell.jsx"></script>
+<script type="text/babel" src="screen-home.jsx"></script>
+<script type="text/babel" src="editorial-shell.jsx"></script>
+<script type="text/babel" src="screen-editorial-home.jsx"></script>
+<script type="text/babel" src="screen-room.jsx"></script>
+<script type="text/babel" src="screen-create.jsx"></script>
+<script type="text/babel" src="screen-devices.jsx"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentHue": 6,
+  "accentChroma": 0.21,
+  "density": "normal",
+  "participantLayout": "sidebar",
+  "appName": "SPECTRA"
+}/*EDITMODE-END*/;
+
+function DesktopApp({ initialScreen = 'home' }) {
+  const [screen, setScreen] = useState(initialScreen);
+  const [community, setCommunity] = useState('cine');
+
+  let content;
+  if (screen === 'home') content = <HomeScreen onEnterRoom={() => setScreen('room')} onCreateRoom={() => setScreen('create')}/>;
+  else if (screen === 'room') content = <RoomScreen onExit={() => setScreen('home')}/>;
+  else if (screen === 'create') content = <CreateScreen onCancel={() => setScreen('home')} onCreate={() => setScreen('room')}/>;
+  else if (screen === 'catalog') content = <CatalogScreen/>;
+  else content = <HomeScreen onEnterRoom={() => setScreen('room')} onCreateRoom={() => setScreen('create')}/>;
+
+  return (
+    <AppShell
+      activeScreen={screen}
+      onScreen={setScreen}
+      activeCommunity={community}
+      onCommunity={setCommunity}
+    >
+      {content}
+    </AppShell>
+  );
+}
+
+function EditorialApp({ initialScreen = 'home' }) {
+  const [screen, setScreen] = useState(initialScreen);
+  let content;
+  if (screen === 'room') content = <RoomScreen onExit={() => setScreen('home')}/>;
+  else if (screen === 'create') content = <CreateScreen onCancel={() => setScreen('home')} onCreate={() => setScreen('room')}/>;
+  else if (screen === 'catalog') content = <CatalogScreen/>;
+  else content = <EditorialHome onEnterRoom={() => setScreen('room')} onCreateRoom={() => setScreen('create')}/>;
+
+  return (
+    <EditorialShell activeScreen={screen === 'home' ? 'home' : screen} onScreen={setScreen}>
+      {content}
+    </EditorialShell>
+  );
+}
+
+function App() {
+  const [values, set] = useTweaks(TWEAK_DEFAULTS);
+
+  // Apply accent tweak — base is #c70049, sliders shift hue/chroma
+  useEffect(() => {
+    if (values.accentHue === 6 && Math.abs(values.accentChroma - 0.21) < 0.01) {
+      document.documentElement.style.setProperty('--accent', '#c70049');
+    } else {
+      document.documentElement.style.setProperty('--accent', `oklch(0.52 ${values.accentChroma} ${values.accentHue})`);
+    }
+    document.documentElement.style.setProperty('--accent-dim', `oklch(0.40 ${values.accentChroma * 0.85} ${values.accentHue})`);
+    document.documentElement.style.setProperty('--accent-bright', `oklch(0.62 ${values.accentChroma * 1.05} ${values.accentHue})`);
+  }, [values.accentHue, values.accentChroma]);
+
+  return (
+    <>
+      <DesignCanvas title={values.appName} subtitle="App multiplataforma de salas sociales + streaming sincronizado · exploración v1">
+        <DCSection id="desktop" title="Desktop · experiencia principal">
+          <DCArtboard id="home" label="Home — editorial, cinematográfico (NHEXA)" width={1440} height={1800}>
+            <EditorialApp initialScreen="home"/>
+          </DCArtboard>
+          <DCArtboard id="room" label="Sala en vivo — stream + participantes + chat" width={1440} height={900}>
+            <EditorialApp initialScreen="room"/>
+          </DCArtboard>
+          <DCArtboard id="create" label="Crear sala — flujo de configuración" width={1440} height={900}>
+            <EditorialApp initialScreen="create"/>
+          </DCArtboard>
+          <DCArtboard id="catalog" label="Catálogo compartible" width={1440} height={900}>
+            <EditorialApp initialScreen="catalog"/>
+          </DCArtboard>
+          <DCArtboard id="home-dashboard" label="Alternativa — dashboard (Streamby-style)" width={1440} height={900}>
+            <DesktopApp initialScreen="home"/>
+          </DCArtboard>
+        </DCSection>
+
+        <DCSection id="companions" title="Otras plataformas · companion">
+          <DCArtboard id="mobile" label="Mobile — sala activa (iOS)" width={390} height={844}>
+            <MobileView/>
+          </DCArtboard>
+          <DCArtboard id="tv" label="TV mode — full-bleed + control remoto desde móvil" width={1280} height={720}>
+            <TVView/>
+          </DCArtboard>
+        </DCSection>
+      </DesignCanvas>
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Identidad">
+          <TweakText label="Nombre de la app" value={values.appName} onChange={v => set('appName', v)}/>
+        </TweakSection>
+        <TweakSection label="Color de acento">
+          <TweakSlider label="Matiz (hue)" value={values.accentHue} min={0} max={360} step={1} onChange={v => set('accentHue', v)} unit="°"/>
+          <TweakSlider label="Saturación" value={values.accentChroma} min={0} max={0.25} step={0.01} onChange={v => set('accentChroma', v)}/>
+          <TweakRadio label="Presets" value={values.accentHue} onChange={v => set('accentHue', v)} options={[
+            { value: 6, label: 'Crimson #c70049' },
+            { value: 230, label: 'Cyan' },
+            { value: 85, label: 'Ámbar' },
+            { value: 155, label: 'Menta' },
+          ]}/>
+        </TweakSection>
+        <TweakSection label="Layout de sala">
+          <TweakRadio label="Participantes" value={values.participantLayout} onChange={v => set('participantLayout', v)} options={[
+            { value: 'sidebar', label: 'Rail derecho (actual)' },
+            { value: 'bottom', label: 'Barra inferior' },
+            { value: 'overlay', label: 'Overlay flotante' },
+          ]}/>
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

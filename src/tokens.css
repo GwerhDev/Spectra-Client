@@ -1,0 +1,36 @@
+@import '@fontsource/geist/400.css';
+@import '@fontsource/geist/500.css';
+@import '@fontsource/geist/600.css';
+@import '@fontsource/geist/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+:root {
+  /* Backgrounds */
+  --bg:        oklch(0.14 0.003 0);
+  --bg-elev:   oklch(0.17 0.004 0);
+  --bg-elev-2: oklch(0.21 0.005 0);
+  --bg-inset:  oklch(0.11 0.003 0);
+
+  /* Borders */
+  --line:      oklch(0.26 0.008 0);
+  --line-soft: oklch(0.20 0.006 0);
+
+  /* Foregrounds */
+  --fg:        oklch(0.94 0.003 0);
+  --fg-dim:    oklch(0.68 0.008 0);
+  --fg-mute:   oklch(0.46 0.010 0);
+
+  /* Accent */
+  --accent:        #c70049;
+  --accent-dim:    oklch(0.42 0.17 6);
+  --accent-bright: oklch(0.62 0.22 6);
+
+  /* Status */
+  --live: oklch(0.68 0.19 25);
+  --ok:   oklch(0.75 0.15 180);
+
+  /* Typography */
+  --font-sans: 'Geist', -apple-system, 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}

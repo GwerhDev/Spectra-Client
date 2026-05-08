@@ -1,0 +1,88 @@
+/* Spectra — design tokens */
+:root {
+  --bg: oklch(0.14 0.003 0);
+  --bg-elev: oklch(0.17 0.004 0);
+  --bg-elev-2: oklch(0.21 0.005 0);
+  --bg-inset: oklch(0.11 0.003 0);
+  --line: oklch(0.26 0.008 0);
+  --line-soft: oklch(0.20 0.006 0);
+  --fg: oklch(0.94 0.003 0);
+  --fg-dim: oklch(0.68 0.008 0);
+  --fg-mute: oklch(0.46 0.010 0);
+  --accent: #c70049;
+  --accent-dim: oklch(0.42 0.17 6);
+  --accent-bright: oklch(0.62 0.22 6);
+  --live: oklch(0.68 0.19 25);
+  --ok: oklch(0.75 0.15 180);
+  --font-sans: 'Geist', -apple-system, 'SF Pro Display', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, textarea { font-family: inherit; }
+
+.mono { font-family: var(--font-mono); font-feature-settings: 'zero', 'ss01'; letter-spacing: -0.01em; }
+.dim { color: var(--fg-dim); }
+.mute { color: var(--fg-mute); }
+
+/* Scrollbar subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 10px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--line-soft); }
+
+/* Placeholder shimmer */
+.placeholder {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      oklch(0.28 0.006 60) 0 2px,
+      oklch(0.24 0.006 60) 2px 12px
+    );
+  position: relative;
+}
+.placeholder::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Live dot */
+.live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 0 var(--live);
+  animation: livepulse 2s infinite;
+}
+@keyframes livepulse {
+  0% { box-shadow: 0 0 0 0 oklch(0.68 0.19 25 / 0.5); }
+  70% { box-shadow: 0 0 0 8px oklch(0.68 0.19 25 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.68 0.19 25 / 0); }
+}
+
+/* Focus */
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
