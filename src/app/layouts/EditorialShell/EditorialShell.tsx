@@ -12,11 +12,14 @@ const NAV_ITEMS = [
 ];
 
 export function EditorialShell() {
+  const location = useLocation();
   return (
     <div className={styles.shell}>
       <EditorialNav/>
       <main className={styles.main}>
-        <Outlet/>
+        <div key={location.pathname} className={styles.page}>
+          <Outlet/>
+        </div>
       </main>
     </div>
   );

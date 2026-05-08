@@ -19,9 +19,9 @@ interface BtnProps {
 }
 
 const SIZES = {
-  sm: { h: 28, px: 10, fs: 12 },
-  md: { h: 34, px: 14, fs: 13 },
-  lg: { h: 42, px: 20, fs: 14 },
+  sm: { h: 28, px: 10, fs: 12, r: 8  },
+  md: { h: 34, px: 14, fs: 13, r: 12 },
+  lg: { h: 42, px: 20, fs: 14, r: 16 },
 };
 
 const VARIANTS: Record<Variant, { bg: string; color: string; border: string }> = {
@@ -53,7 +53,7 @@ export function Btn({ children, variant = 'ghost', size = 'md', onClick, active,
         background: active ? 'var(--bg-elev-2)' : v.bg,
         color: active ? 'var(--fg)' : v.color,
         border: `1px solid ${v.border}`,
-        borderRadius: 8,
+        borderRadius: s.r,
         display: 'inline-flex', alignItems: 'center', gap: 8,
         fontWeight: 500, letterSpacing: '-0.005em',
         transition: 'background 120ms, color 120ms, border-color 120ms',

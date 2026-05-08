@@ -26,7 +26,7 @@ export function Tag({ children, tone = 'default', icon }: TagProps) {
       letterSpacing: '0.04em', textTransform: 'uppercase',
       background: t.bg, color: t.fg,
       border: `1px solid ${t.bd}`,
-      borderRadius: 4,
+      borderRadius: 6,
     }}>
       {tone === 'live' && <span className="live-dot"/>}
       {icon && <Icon name={icon} size={11}/>}
