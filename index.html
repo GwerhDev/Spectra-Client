@@ -2,9 +2,24 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link id="favicon" rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spectra | NHEXA Entertainment</title>
+    <script>
+      (function () {
+        var img = new Image();
+        img.src = '/logo.png';
+        img.onload = function () {
+          var canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          var ctx = canvas.getContext('2d');
+          ctx.filter = 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)';
+          ctx.drawImage(img, 0, 0);
+          document.getElementById('favicon').href = canvas.toDataURL('image/png');
+        };
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
