@@ -1,8 +1,7 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { Avatar, Icon } from '@/app/components/ui';
+import { Icon } from '@/app/components/ui';
 import { AccountMenu } from '@/app/components/ui/AccountMenu/AccountMenu';
 import { AppSwitcher } from '@/app/components/ui/AppSwitcher/AppSwitcher';
-import { useAppSelector } from '@/store/hooks';
 import styles from './EditorialShell.module.css';
 
 const NAV_ITEMS = [
@@ -16,7 +15,6 @@ const NAV_ITEMS = [
 export function EditorialShell() {
   const location = useLocation();
   const navigate = useNavigate();
-  const userData = useAppSelector(s => s.session.userData);
 
   const active = NAV_ITEMS.find(it =>
     it.path === '/' ? location.pathname === '/' : location.pathname.startsWith(it.path)
