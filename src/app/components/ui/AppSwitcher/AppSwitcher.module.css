@@ -6,9 +6,9 @@
 }
 
 .trigger {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
   padding: 3px 8px;
   background: transparent;
   border: none;
@@ -22,13 +22,45 @@
   color: var(--accent);
 }
 
-.trigger:hover {
-  background: var(--bg-elev);
-  color: var(--accent-bright);
+
+.brandSpectra,
+.brandNhexa {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.brandNhexa {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.trigger:hover .brandSpectra {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.trigger:hover .brandNhexa {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.triggerIcon {
+  width: 15px;
+  height: 15px;
 }
 
 .name {
   color: inherit;
+}
+
+.nhexaName {
+  font-family: 'Game-Of-Squids', sans-serif;
+  color: #e5e5e5;
 }
 
 .popover {

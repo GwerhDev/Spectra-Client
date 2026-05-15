@@ -1,10 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
-import { NHEXA_API } from '@/config/api';
+import { App, getAppList } from '@/services/apps';
 import styles from './AppSwitcher.module.css';
 
 const LOGO_FILTER = 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)';
-
-type App = { label: string; url: string; icon: string };
 
 const isCurrent = (url: string) => {
   try { return new URL(url).origin === window.location.origin; } catch { return false; }
@@ -16,10 +14,7 @@ export function AppSwitcher() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    fetch(`${NHEXA_API}/app-list`, { credentials: 'include' })
-      .then(r => r.json())
-      .then(data => setApps(data.user ?? []))
-      .catch(() => {});
+    getAppList().then(setApps).catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -33,8 +28,14 @@ export function AppSwitcher() {
   return (
     <div className={styles.root} ref={ref}>
       <button className={styles.trigger} onClick={() => setOpen(o => !o)}>
-        <img src="/logo.png" alt="" style={{ width: 15, height: 15, filter: LOGO_FILTER }} />
-        <span className={styles.name}>SPECTRA</span>
+        <span className={styles.brandSpectra}>
+          <img src="/logo.png" alt="" style={{ width: 15, height: 15, filter: LOGO_FILTER }} />
+          <span className={styles.name}>SPECTRA</span>
+        </span>
+        <span className={styles.brandNhexa}>
+          <img src="/nhexa-logo.svg" alt="" className={styles.triggerIcon} />
+          <span className={styles.nhexaName}>NHEXA</span>
+        </span>
       </button>
 
       {open && (
