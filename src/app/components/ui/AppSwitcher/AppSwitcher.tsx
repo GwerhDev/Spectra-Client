@@ -33,7 +33,7 @@ export function AppSwitcher() {
           <span className={styles.name}>SPECTRA</span>
         </span>
         <span className={styles.brandNhexa}>
-          <img src="/nhexa-logo.svg" alt="" className={styles.triggerIcon} />
+          <span className={styles.nhexaIcon} />
           <span className={styles.nhexaName}>NHEXA</span>
         </span>
       </button>

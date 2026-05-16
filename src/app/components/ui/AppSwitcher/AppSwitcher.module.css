@@ -58,9 +58,19 @@
   color: inherit;
 }
 
+.nhexaIcon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  background-color: var(--fg);
+  -webkit-mask: url('/nhexa-logo.svg') no-repeat center / contain;
+  mask: url('/nhexa-logo.svg') no-repeat center / contain;
+}
+
 .nhexaName {
   font-family: 'Game-Of-Squids', sans-serif;
-  color: #e5e5e5;
+  color: var(--fg);
 }
 
 .popover {
@@ -104,6 +114,7 @@
   border-radius: 3px;
   object-fit: contain;
   flex-shrink: 0;
+  filter: var(--icon-filter);
 }
 
 .label {
