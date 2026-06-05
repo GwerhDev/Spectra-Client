@@ -4,9 +4,6 @@ import styles from './AppSwitcher.module.css';
 
 const LOGO_FILTER = 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)';
 
-const isCurrent = (url: string) => {
-  try { return new URL(url).origin === window.location.origin; } catch { return false; }
-};
 
 export function AppSwitcher() {
   const [open, setOpen] = useState(false);
@@ -43,7 +40,7 @@ export function AppSwitcher() {
           {apps.length === 0 && (
             <span className={styles.empty}>Loading…</span>
           )}
-          {apps.filter(app => !isCurrent(app.url)).map(app => (
+          {apps.map(app => (
             <button
               key={app.url}
               className={styles.item}
