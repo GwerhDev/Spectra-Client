@@ -24,11 +24,13 @@ export function Loader({ progress = 0 }: LoaderProps) {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
-        <img
-          src="/logo.png"
-          alt="Spectra"
-          className={styles.logo}
-        />
+        <div className={styles.logoWrap}>
+          <img
+            src="/logo.png"
+            alt="Spectra"
+            className={styles.logo}
+          />
+        </div>
         <span className={styles.wordmark}>SPECTRA</span>
         <div className={styles.barTrack}>
           <div className={styles.bar} style={{ width: `${progress}%` }} />
