@@ -1,8 +1,13 @@
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { App, getAppList } from '@/services/apps';
 import styles from './AppSwitcher.module.css';
 
-const LOGO_FILTER = 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)';
+const LOGO_STYLE: React.CSSProperties = {
+  display: 'inline-block', width: 15, height: 15, flexShrink: 0,
+  backgroundColor: 'var(--accent)',
+  WebkitMask: 'url(/logo.png) no-repeat center / contain',
+  mask: 'url(/logo.png) no-repeat center / contain',
+};
 
 
 export function AppSwitcher() {
@@ -26,7 +31,7 @@ export function AppSwitcher() {
     <div className={styles.root} ref={ref}>
       <button className={styles.trigger} onClick={() => setOpen(o => !o)}>
         <span className={styles.brandSpectra}>
-          <img src="/logo.png" alt="" style={{ width: 15, height: 15, filter: LOGO_FILTER }} />
+          <span style={LOGO_STYLE} />
           <span className={styles.name}>SPECTRA</span>
         </span>
         <span className={styles.brandNhexa}>

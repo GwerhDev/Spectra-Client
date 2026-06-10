@@ -262,7 +262,7 @@ function ChatMessage({ msg }: { msg: ChatMsg }) {
     <div className={styles.chatMsg} style={{
       padding: msg.highlight ? '8px 10px' : '0',
       margin: msg.highlight ? '-4px -4px' : '0',
-      background: msg.highlight ? 'oklch(0.28 0.06 85 / 0.15)' : 'transparent',
+      background: msg.highlight ? 'color-mix(in srgb, var(--accent) 12%, transparent)' : 'transparent',
       borderLeft: msg.highlight ? '2px solid var(--accent)' : 'none',
       borderRadius: msg.highlight ? 4 : 0,
     }}>

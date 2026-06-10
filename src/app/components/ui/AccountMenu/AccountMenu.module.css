@@ -118,6 +118,6 @@
 }
 
 .logout:hover {
-  background: oklch(0.18 0.05 6);
+  background: var(--bg-elev-2);
   color: var(--accent-bright);
 }

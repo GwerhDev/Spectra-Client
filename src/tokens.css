@@ -28,13 +28,13 @@
   --icon-filter: brightness(0.94);
 
   /* Accent */
-  --accent:        #c70049;
-  --accent-dim:    oklch(0.42 0.17 6);
-  --accent-bright: oklch(0.62 0.22 6);
+  --accent:        #73a5cc;
+  --accent-dim:    oklch(0.40 0.07 240);
+  --accent-bright: oklch(0.75 0.10 240);
 
   /* Status */
-  --live: oklch(0.68 0.19 25);
-  --ok:   oklch(0.75 0.15 180);
+  --live: #e8914a;
+  --ok:   #52c99a;
 
   /* Typography */
   --font-sans: 'Geist', -apple-system, 'SF Pro Display', system-ui, sans-serif;

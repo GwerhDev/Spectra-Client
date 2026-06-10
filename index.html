@@ -14,8 +14,10 @@
           canvas.width = img.width;
           canvas.height = img.height;
           var ctx = canvas.getContext('2d');
-          ctx.filter = 'brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%)';
           ctx.drawImage(img, 0, 0);
+          ctx.globalCompositeOperation = 'source-in';
+          ctx.fillStyle = '#73a5cc';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
           document.getElementById('favicon').href = canvas.toDataURL('image/png');
         };
       })();

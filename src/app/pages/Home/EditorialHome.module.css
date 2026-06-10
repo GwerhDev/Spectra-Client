@@ -14,8 +14,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, oklch(0.22 0.05 358 / 0.35), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 20% 80%, oklch(0.20 0.06 280 / 0.25), transparent 70%),
+    radial-gradient(ellipse 80% 60% at 70% 40%, oklch(0.22 0.05 230 / 0.35), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, oklch(0.20 0.06 270 / 0.25), transparent 70%),
     var(--bg-inset);
 }
 

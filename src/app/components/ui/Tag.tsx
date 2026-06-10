@@ -12,7 +12,7 @@ interface TagProps {
 const TONES: Record<Tone, { bg: string; fg: string; bd: string }> = {
   default: { bg: 'var(--bg-elev-2)',          fg: 'var(--fg-dim)',           bd: 'var(--line)' },
   live:    { bg: 'oklch(0.25 0.08 25)',        fg: 'oklch(0.85 0.14 25)',     bd: 'oklch(0.45 0.12 25)' },
-  accent:  { bg: 'oklch(0.28 0.06 85)',        fg: 'var(--accent)',           bd: 'oklch(0.45 0.08 85)' },
+  accent:  { bg: 'color-mix(in srgb, var(--accent) 14%, transparent)', fg: 'var(--accent)', bd: 'color-mix(in srgb, var(--accent) 35%, transparent)' },
   sync:    { bg: 'oklch(0.25 0.05 155)',       fg: 'var(--ok)',               bd: 'oklch(0.42 0.08 155)' },
 };
 

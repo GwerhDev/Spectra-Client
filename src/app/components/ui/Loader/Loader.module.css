@@ -46,9 +46,12 @@
 }
 
 .logo {
+  display: block;
   width: 120px;
   height: 120px;
-  filter: brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(5640%) hue-rotate(330deg) brightness(91%) contrast(101%);
+  background-color: var(--accent);
+  -webkit-mask: url('/logo.png') no-repeat center / contain;
+  mask: url('/logo.png') no-repeat center / contain;
 }
 
 .wordmark {
