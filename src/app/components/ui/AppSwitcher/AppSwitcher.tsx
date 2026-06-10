@@ -2,13 +2,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { App, getAppList } from '@/services/apps';
 import styles from './AppSwitcher.module.css';
 
-const LOGO_STYLE: React.CSSProperties = {
-  display: 'inline-block', width: 15, height: 15, flexShrink: 0,
-  backgroundColor: 'var(--accent)',
-  WebkitMask: 'url(/logo.png) no-repeat center / contain',
-  mask: 'url(/logo.png) no-repeat center / contain',
-};
-
 
 export function AppSwitcher() {
   const [open, setOpen] = useState(false);
@@ -31,7 +24,7 @@ export function AppSwitcher() {
     <div className={styles.root} ref={ref}>
       <button className={styles.trigger} onClick={() => setOpen(o => !o)}>
         <span className={styles.brandSpectra}>
-          <span style={LOGO_STYLE} />
+          <span className={styles.spectraIcon} />
           <span className={styles.name}>SPECTRA</span>
         </span>
         <span className={styles.brandNhexa}>
