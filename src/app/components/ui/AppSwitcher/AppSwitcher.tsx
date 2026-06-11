@@ -1,28 +1,17 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { App, getAppList } from '@/services/apps';
 import styles from './AppSwitcher.module.css';
-
+import { useAppDispatch } from '@/store/hooks';
+import { toggleMinimized } from '@/store/desktopSlice';
 
 export function AppSwitcher() {
-  const [open, setOpen] = useState(false);
-  const [apps, setApps] = useState<App[]>([]);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    getAppList().then(setApps).catch(() => {});
-  }, []);
-
-  useEffect(() => {
-    const h = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener('mousedown', h);
-    return () => document.removeEventListener('mousedown', h);
-  }, []);
+  const dispatch = useAppDispatch();
 
   return (
-    <div className={styles.root} ref={ref}>
-      <button className={styles.trigger} onClick={() => setOpen(o => !o)}>
+    <div className={styles.root}>
+      <button
+        className={styles.trigger}
+        onClick={() => dispatch(toggleMinimized())}
+        data-testid="app-switcher-trigger"
+      >
         <span className={styles.brandSpectra}>
           <span className={styles.spectraIcon} />
           <span className={styles.name}>SPECTRA</span>
@@ -32,25 +21,6 @@ export function AppSwitcher() {
           <span className={styles.nhexaName}>NHEXA</span>
         </span>
       </button>
-
-      {open && (
-        <div className={styles.popover}>
-          {apps.length === 0 && (
-            <span className={styles.empty}>Loading…</span>
-          )}
-          {apps.map(app => (
-            <button
-              key={app.url}
-              className={styles.item}
-              style={{ '--app-color': app.color ?? '#ffffff' } as React.CSSProperties}
-              onClick={() => { window.location.href = app.url; }}
-            >
-              <img src={app.icon} alt="" className={styles.appIcon} />
-              <span className={styles.label}>{app.label.toUpperCase()}</span>
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

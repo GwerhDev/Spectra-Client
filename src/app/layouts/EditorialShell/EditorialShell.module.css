@@ -7,6 +7,28 @@
   overflow: hidden;
 }
 
+/* The whole shell, wrapped so it can minimize into a floating window over the
+   NHEXA desktop. */
+.window {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.window[data-minimized='true'] {
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* When minimized, clicks restore the window instead of hitting the inner UI. */
+.window[data-minimized='true'] > * {
+  pointer-events: none;
+}
+
 /* ── Top header bar (like Spellcast's header-app) ── */
 .header {
   display: flex;
