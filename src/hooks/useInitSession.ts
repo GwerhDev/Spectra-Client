@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/store/hooks';
 import { setSession, setLoader } from '@/store/sessionSlice';
 import { fetchAuth } from '@/services/auth';
@@ -9,7 +8,6 @@ export function useInitSession(
   onProgress?: (progress: number) => void,
 ) {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(setLoader(true));
@@ -37,5 +35,5 @@ export function useInitSession(
         }, 300);
       }
     })();
-  }, [dispatch, navigate]);
+  }, [dispatch]);
 }
