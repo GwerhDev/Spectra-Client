@@ -37,7 +37,9 @@ export function Desktop() {
   };
 
   return (
-    <div className={s.desktop} data-minimized={minimized} aria-hidden={!minimized}>
+    <>
+      <div className={s.desktop} data-minimized={minimized} aria-hidden={!minimized} />
+      <div className={s.launcherWrapper}>
       <AnimatePresence>
         {minimized && (
           <motion.div
@@ -85,6 +87,7 @@ export function Desktop() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </>
   );
 }
