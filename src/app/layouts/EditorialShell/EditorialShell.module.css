@@ -7,8 +7,8 @@
   overflow: hidden;
 }
 
-/* The whole shell, wrapped so it can minimize into a floating window over the
-   NHEXA desktop. */
+/* Static wrapper for header + body -- only .body (below) minimizes now, the header
+   bar stays at full size so AppSwitcher/AccountMenu remain reachable while minimized. */
 .window {
   position: relative;
   z-index: 2;
@@ -16,17 +16,6 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-}
-
-.window[data-minimized='true'] {
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-}
-
-/* When minimized, clicks restore the window instead of hitting the inner UI. */
-.window[data-minimized='true'] > * {
-  pointer-events: none;
 }
 
 /* ── Top header bar (like Spellcast's header-app) ── */
@@ -66,11 +55,23 @@
   gap: 4px;
 }
 
-/* ── Body: sidebar + content ── */
+/* ── Body: sidebar + content -- the part that actually minimizes/floats ── */
 .body {
   display: flex;
   flex: 1;
   overflow: hidden;
+  position: relative;
+}
+
+.body[data-minimized='true'] {
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* When minimized, clicks restore the window instead of hitting the inner UI. */
+.body[data-minimized='true'] > * {
+  pointer-events: none;
 }
 
 /* ── Sidebar nav ── */

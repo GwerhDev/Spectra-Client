@@ -31,16 +31,9 @@ export function EditorialShell() {
 
       <Desktop />
 
-      <motion.div
-        className={styles.window}
-        data-minimized={minimized}
-        onClick={minimized ? () => dispatch(setMinimized(false)) : undefined}
-        animate={minimized ? { scale: 0.52, y: '-8%', borderRadius: 16 } : { scale: 1, y: 0, borderRadius: 0 }}
-        transition={{ type: 'spring', stiffness: 260, damping: 30 }}
-        style={{ transformOrigin: 'center' }}
-      >
+      <div className={styles.window}>
 
-      {/* ── Top header bar ── */}
+      {/* ── Top header bar — stays put, only the body below minimizes ── */}
       <header className={styles.header}>
         <AppSwitcher />
         <div className={styles.headerRight}>
@@ -52,7 +45,14 @@ export function EditorialShell() {
       </header>
 
       {/* ── Body: sidebar + content ── */}
-      <div className={styles.body}>
+      <motion.div
+        className={styles.body}
+        data-minimized={minimized}
+        onClick={minimized ? () => dispatch(setMinimized(false)) : undefined}
+        animate={minimized ? { scale: 0.52, y: '-8%', borderRadius: 16 } : { scale: 1, y: 0, borderRadius: 0 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+        style={{ transformOrigin: 'center' }}
+      >
 
         {/* Sidebar */}
         <nav className={styles.sidebar}>
@@ -84,8 +84,8 @@ export function EditorialShell() {
           </div>
         </main>
 
-      </div>
       </motion.div>
+      </div>
     </div>
   );
 }
