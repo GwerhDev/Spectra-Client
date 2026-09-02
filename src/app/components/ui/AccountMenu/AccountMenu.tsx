@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { useAppSelector } from '@/store/hooks';
 import { fetchLogout } from '@/services/auth';
+import { EXTERNAL_LINKS } from '@/config/externalLinks';
 import styles from './AccountMenu.module.css';
 
 export function AccountMenu() {
@@ -42,6 +43,18 @@ export function AccountMenu() {
           <button className={styles.menuItem} onClick={() => setOpen(false)}>
             Account center
           </button>
+          {/* TCORE-83: AGPLv3 network-use clause -- an always-reachable link to the source
+              code, satisfied here since AccountMenu sits in EditorialShell's header, present
+              on every real route. */}
+          <a
+            className={styles.menuItem}
+            href={EXTERNAL_LINKS.sourceCode}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            License &amp; source (AGPLv3)
+          </a>
           <button className={`${styles.menuItem} ${styles.logout}`} onClick={handleLogout}>
             Log out
           </button>
