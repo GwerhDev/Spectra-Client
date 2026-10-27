@@ -1,11 +1,12 @@
 import s from './DesktopDock.module.css';
 import { Icon, IconName } from '@/app/components/ui/Icon';
+import { ACCOUNT_URL, NHEXA_URL } from '@/config/api';
 
 // The desktop's fixed tools, there whatever StreamBy's catalog says: Nhexa's home, the account,
 // and the settings (not available yet).
 const TOOLS: { id: string; label: string; icon: IconName; url: string }[] = [
-  { id: 'home', label: 'Inicio', icon: 'home', url: 'https://nhexa.cl' },
-  { id: 'account', label: 'Cuenta', icon: 'user', url: 'https://accounts.nhexa.cl' },
+  { id: 'home', label: 'Inicio', icon: 'home', url: NHEXA_URL },
+  { id: 'account', label: 'Cuenta', icon: 'user', url: ACCOUNT_URL },
 ];
 
 export function DesktopDock() {
