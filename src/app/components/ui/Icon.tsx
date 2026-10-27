@@ -3,7 +3,7 @@ export type IconName =
   | 'video' | 'videoOff' | 'screen' | 'chat' | 'users' | 'settings'
   | 'plus' | 'chevR' | 'chevD' | 'hash' | 'lock' | 'volume'
   | 'fullscreen' | 'close' | 'send' | 'film' | 'music' | 'sync'
-  | 'sparkle' | 'signal' | 'dot';
+  | 'sparkle' | 'signal' | 'dot' | 'user';
 
 interface IconProps {
   name: IconName;
@@ -53,6 +53,7 @@ export function Icon({ name, size = 16, className = '', style }: IconProps) {
     sparkle:    <><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/></>,
     signal:     <><path d="M3 18h2v-4H3zM8 18h2V9H8zM13 18h2V4h-2zM18 18h2v-8h-2z" fill="currentColor" stroke="none"/></>,
     dot:        <><circle cx="12" cy="12" r="3" fill="currentColor"/></>,
+    user:       <><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></>,
   };
 
   return <svg {...common}>{paths[name]}</svg>;
