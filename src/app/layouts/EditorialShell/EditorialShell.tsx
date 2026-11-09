@@ -1,7 +1,6 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Icon } from '@/app/components/ui';
-import { AccountMenu } from '@/app/components/ui/AccountMenu/AccountMenu';
+import { SearchButton } from '@/app/components/ui/SearchButton/SearchButton';
 import { AppSwitcher } from '@/app/components/ui/AppSwitcher/AppSwitcher';
 import { AppTitle } from '@/app/components/ui/AppTitle/AppTitle';
 import { Desktop } from '@/app/components/Desktop';
@@ -36,16 +35,14 @@ export function EditorialShell() {
 
       {/* ── Top header bar — stays put, only the body below minimizes ── */}
       <header className={styles.header}>
-        {/* The app's icon opens Nhexa's apps; its title goes home. */}
+        {/* The app's icon opens Nhexa's apps; its title goes home; the magnifying glass is the
+            app's search (not yet: a mock). */}
         <div className={styles.headerLeft}>
           <AppSwitcher onClick={() => dispatch(toggleMinimized())} />
         </div>
         <AppTitle label="Spectra" onClick={() => navigate('/')} />
         <div className={styles.headerRight}>
-          <button className={styles.iconBtn}>
-            <Icon name="search" size={13}/>
-          </button>
-          <AccountMenu />
+          <SearchButton />
         </div>
       </header>
 
