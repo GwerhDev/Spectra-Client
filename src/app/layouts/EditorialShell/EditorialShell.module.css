@@ -47,6 +47,16 @@
   font-family: var(--font-sans);
 }
 
+/* The app's icon, in a slot as wide as Spellcast's and StreamBy's, at the left edge. */
+.headerLeft {
+  position: absolute;
+  left: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .headerRight {
   position: absolute;
   right: 16px;

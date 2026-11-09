@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import { Icon } from '@/app/components/ui';
 import { AccountMenu } from '@/app/components/ui/AccountMenu/AccountMenu';
 import { AppSwitcher } from '@/app/components/ui/AppSwitcher/AppSwitcher';
+import { AppTitle } from '@/app/components/ui/AppTitle/AppTitle';
 import { Desktop } from '@/app/components/Desktop';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { setMinimized } from '@/store/desktopSlice';
+import { setMinimized, toggleMinimized } from '@/store/desktopSlice';
 import styles from './EditorialShell.module.css';
 
 const NAV_ITEMS = [
@@ -35,7 +36,11 @@ export function EditorialShell() {
 
       {/* ── Top header bar — stays put, only the body below minimizes ── */}
       <header className={styles.header}>
-        <AppSwitcher />
+        {/* The app's icon opens Nhexa's apps; its title goes home. */}
+        <div className={styles.headerLeft}>
+          <AppSwitcher onClick={() => dispatch(toggleMinimized())} />
+        </div>
+        <AppTitle label="Spectra" onClick={() => navigate('/')} />
         <div className={styles.headerRight}>
           <button className={styles.iconBtn}>
             <Icon name="search" size={13}/>

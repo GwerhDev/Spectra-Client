@@ -1,83 +1,43 @@
-.root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 .trigger {
   position: relative;
-  display: flex;
-  align-items: center;
+  width: 18px;
+  height: 18px;
   padding: 0;
-  background: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
+  background: transparent;
   cursor: pointer;
-  font-family: var(--font-sans);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
 }
 
-.brandSpectra,
-.brandNhexa {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+.appIcon,
+.appsIcon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.brandNhexa {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(4px);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.trigger:hover .brandSpectra {
-  opacity: 0;
-  transform: translateY(-4px);
-}
-
-.trigger:hover .brandNhexa {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.triggerIcon {
-  width: 15px;
-  height: 15px;
-}
-
-.spectraIcon {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
+.appIcon {
   background-color: var(--accent);
   -webkit-mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
   mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
 }
 
-.name {
-  color: inherit;
-}
-
-.nhexaIcon {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  background-color: var(--nhexa-desktop-text);
-  -webkit-mask: url('/nhexa-logo.svg') no-repeat center / contain;
-  mask: url('/nhexa-logo.svg') no-repeat center / contain;
-}
-
-.nhexaName {
-  font-family: 'Game-Of-Squids', sans-serif;
+.appsIcon {
+  opacity: 0;
+  transform: scale(0.7) rotate(-30deg);
   color: var(--nhexa-desktop-text);
+}
+
+.trigger:hover .appIcon,
+.trigger:focus-visible .appIcon {
+  opacity: 0;
+  transform: scale(0.7) rotate(30deg);
+}
+
+.trigger:hover .appsIcon,
+.trigger:focus-visible .appsIcon {
+  opacity: 1;
+  transform: none;
 }

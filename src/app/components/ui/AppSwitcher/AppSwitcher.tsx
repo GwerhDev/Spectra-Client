@@ -1,26 +1,24 @@
+import { Icon } from '../Icon';
 import styles from './AppSwitcher.module.css';
-import { useAppDispatch } from '@/store/hooks';
-import { toggleMinimized } from '@/store/desktopSlice';
 
-export function AppSwitcher() {
-  const dispatch = useAppDispatch();
+interface AppSwitcherProps {
+  onClick: () => void;
+}
 
+// The header's top-left icon: opens Nhexa's apps (the desktop). Spectra's own icon, which
+// turns into the apps icon (hexagon nodes) on hover.
+export function AppSwitcher({ onClick }: AppSwitcherProps) {
   return (
-    <div className={styles.root}>
-      <button
-        className={styles.trigger}
-        onClick={() => dispatch(toggleMinimized())}
-        data-testid="app-switcher-trigger"
-      >
-        <span className={styles.brandSpectra}>
-          <span className={styles.spectraIcon} />
-          <span className={styles.name}>SPECTRA</span>
-        </span>
-        <span className={styles.brandNhexa}>
-          <span className={styles.nhexaIcon} />
-          <span className={styles.nhexaName}>NHEXA</span>
-        </span>
-      </button>
-    </div>
+    <button
+      type="button"
+      className={styles.trigger}
+      onClick={onClick}
+      title="Nhexa apps"
+      aria-label="Nhexa apps"
+      data-testid="app-switcher-trigger"
+    >
+      <span className={styles.appIcon} />
+      <Icon name="hexagonNodes" size={18} className={styles.appsIcon} />
+    </button>
   );
 }
