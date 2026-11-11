@@ -35,14 +35,12 @@ export function EditorialShell() {
 
       {/* ── Top header bar — stays put, only the body below minimizes ── */}
       <header className={styles.header}>
-        {/* The app's icon opens Nhexa's apps; its title goes home; the magnifying glass is the
-            app's search (not yet: a mock). */}
-        <div className={styles.headerLeft}>
-          <AppSwitcher onClick={() => dispatch(toggleMinimized())} />
-        </div>
+        {/* The app's mark and title, centered, go home; on the right, the magnifying glass is the
+            app's search (not yet: a mock), and the apps icon opens Nhexa's apps. */}
         <AppTitle label="Spectra" onClick={() => navigate('/')} />
         <div className={styles.headerRight}>
           <SearchButton />
+          <AppSwitcher onClick={() => dispatch(toggleMinimized())} />
         </div>
       </header>
 

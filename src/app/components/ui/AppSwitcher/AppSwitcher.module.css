@@ -1,43 +1,24 @@
+/* As the search beside it: Nhexa's shell, its colors whatever the app's theme. */
 .trigger {
-  position: relative;
-  width: 18px;
-  height: 18px;
   padding: 0;
   border: none;
-  border-radius: 0;
-  background: transparent;
+  background: none;
   cursor: pointer;
+  color: var(--nhexa-desktop-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
 }
 
-.appIcon,
-.appsIcon {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+.trigger:hover,
+.trigger:focus-visible {
+  outline: none;
+  color: var(--nhexa-desktop-icon-hover);
 }
 
-.appIcon {
-  background-color: var(--accent);
-  -webkit-mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
-  mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
-}
-
-.appsIcon {
-  opacity: 0;
-  transform: scale(0.7) rotate(-30deg);
-  color: var(--nhexa-desktop-text);
-}
-
-.trigger:hover .appIcon,
-.trigger:focus-visible .appIcon {
-  opacity: 0;
-  transform: scale(0.7) rotate(30deg);
-}
-
-.trigger:hover .appsIcon,
-.trigger:focus-visible .appsIcon {
-  opacity: 1;
-  transform: none;
+/* A little under the other icons: the hexagon nodes fill their box more. */
+.icon {
+  width: 0.9rem;
+  height: 0.9rem;
 }

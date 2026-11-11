@@ -23,11 +23,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 28px;
-  min-height: 28px;
-  max-height: 28px;
+  height: var(--nhexa-desktop-header-height);
+  min-height: var(--nhexa-desktop-header-height);
+  max-height: var(--nhexa-desktop-header-height);
   flex-shrink: 0;
-  border-bottom: 1px solid var(--line-soft);
   position: relative;
   z-index: 20;
 }
@@ -47,22 +46,13 @@
   font-family: var(--font-sans);
 }
 
-/* The app's icon, in a slot as wide as Spellcast's and StreamBy's, at the left edge. */
-.headerLeft {
-  position: absolute;
-  left: 0;
-  width: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Its icons, as far from the window's edge and from each other as in Nhexa's other apps. */
 .headerRight {
   position: absolute;
-  right: 16px;
+  right: var(--nhexa-desktop-header-inline);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--nhexa-desktop-icon-gap);
 }
 
 /* ── Body: sidebar + content -- the part that actually minimizes/floats ── */

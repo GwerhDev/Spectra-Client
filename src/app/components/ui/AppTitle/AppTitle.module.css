@@ -1,4 +1,7 @@
 .title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   padding: 0;
   background: transparent;
   border: none;
@@ -10,4 +13,14 @@
   letter-spacing: 0.18em;
   color: var(--accent);
   white-space: nowrap;
+}
+
+/* Spectra's mark, in its color. */
+.mark {
+  width: var(--nhexa-desktop-title-mark);
+  height: var(--nhexa-desktop-title-mark);
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
+  mask: url('../../../../assets/images/spectra-icon.svg') no-repeat center / contain;
 }

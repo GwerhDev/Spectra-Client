@@ -5,7 +5,7 @@
   border: none;
   background: none;
   cursor: pointer;
-  color: var(--nhexa-desktop-text-dim);
+  color: var(--nhexa-desktop-icon);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,5 +15,10 @@
 .button:hover,
 .button:focus-visible {
   outline: none;
-  color: var(--accent);
+  color: var(--nhexa-desktop-icon-hover);
+}
+
+.icon {
+  width: var(--nhexa-desktop-icon-size);
+  height: var(--nhexa-desktop-icon-size);
 }

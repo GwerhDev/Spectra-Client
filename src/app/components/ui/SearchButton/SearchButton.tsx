@@ -10,7 +10,7 @@ interface SearchButtonProps {
 export function SearchButton({ onClick }: SearchButtonProps) {
   return (
     <button type="button" className={styles.button} onClick={onClick} title="Search" aria-label="Search" data-testid="search-button">
-      <Icon name="search" size={15} />
+      <Icon name="searchSolid" className={styles.icon} />
     </button>
   );
 }
